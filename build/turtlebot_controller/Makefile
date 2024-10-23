@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+turtlebot_controller/CMakeFiles/controller_pub_node.dir/rule:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_controller/CMakeFiles/controller_pub_node.dir/rule
+.PHONY : turtlebot_controller/CMakeFiles/controller_pub_node.dir/rule
+
+# Convenience name for target.
+controller_pub_node: turtlebot_controller/CMakeFiles/controller_pub_node.dir/rule
+
+.PHONY : controller_pub_node
+
+# fast build rule for target.
+controller_pub_node/fast:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_pub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_pub_node.dir/build
+.PHONY : controller_pub_node/fast
+
+# Convenience name for target.
 turtlebot_controller/CMakeFiles/controller_sub_node.dir/rule:
 	cd /home/rubin/my_ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_controller/CMakeFiles/controller_sub_node.dir/rule
 .PHONY : turtlebot_controller/CMakeFiles/controller_sub_node.dir/rule
@@ -407,6 +422,33 @@ std_srvs_generate_messages_lisp/fast:
 	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make turtlebot_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
 .PHONY : std_srvs_generate_messages_lisp/fast
 
+src/publisher.o: src/publisher.cpp.o
+
+.PHONY : src/publisher.o
+
+# target to build an object file
+src/publisher.cpp.o:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_pub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_pub_node.dir/src/publisher.cpp.o
+.PHONY : src/publisher.cpp.o
+
+src/publisher.i: src/publisher.cpp.i
+
+.PHONY : src/publisher.i
+
+# target to preprocess a source file
+src/publisher.cpp.i:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_pub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_pub_node.dir/src/publisher.cpp.i
+.PHONY : src/publisher.cpp.i
+
+src/publisher.s: src/publisher.cpp.s
+
+.PHONY : src/publisher.s
+
+# target to generate assembly for a file
+src/publisher.cpp.s:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_pub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_pub_node.dir/src/publisher.cpp.s
+.PHONY : src/publisher.cpp.s
+
 src/subscriber.o: src/subscriber.cpp.o
 
 .PHONY : src/subscriber.o
@@ -444,6 +486,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... controller_pub_node"
 	@echo "... controller_sub_node"
 	@echo "... std_srvs_generate_messages_py"
 	@echo "... turtlesim_generate_messages_eus"
@@ -463,6 +506,9 @@ help:
 	@echo "... std_srvs_generate_messages_cpp"
 	@echo "... std_srvs_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_lisp"
+	@echo "... src/publisher.o"
+	@echo "... src/publisher.i"
+	@echo "... src/publisher.s"
 	@echo "... src/subscriber.o"
 	@echo "... src/subscriber.i"
 	@echo "... src/subscriber.s"

@@ -224,6 +224,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "my_first_pkg/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "my_first_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake"
   "my_first_pkg/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "turtlebot_controller/CMakeFiles/controller_pub_node.dir/DependInfo.cmake"
   "turtlebot_controller/CMakeFiles/controller_sub_node.dir/DependInfo.cmake"
   "turtlebot_controller/CMakeFiles/std_srvs_generate_messages_py.dir/DependInfo.cmake"
   "turtlebot_controller/CMakeFiles/turtlesim_generate_messages_eus.dir/DependInfo.cmake"

@@ -506,6 +506,19 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named controller_pub_node
+
+# Build rule for target.
+controller_pub_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_pub_node
+.PHONY : controller_pub_node
+
+# fast build rule for target.
+controller_pub_node/fast:
+	$(MAKE) -f turtlebot_controller/CMakeFiles/controller_pub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_pub_node.dir/build
+.PHONY : controller_pub_node/fast
+
+#=============================================================================
 # Target rules for targets named controller_sub_node
 
 # Build rule for target.
@@ -752,6 +765,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... controller_pub_node"
 	@echo "... controller_sub_node"
 	@echo "... std_srvs_generate_messages_py"
 	@echo "... turtlesim_generate_messages_eus"
