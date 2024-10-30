@@ -1,4 +1,6 @@
 
+// Subscriber to  turtlebot 
+
 #include "ros/ros.h"
 #include "turtlesim/Pose.h"
 
@@ -9,7 +11,7 @@ int main(int argc, char **argv){
     ros::init(argc, argv, "turtlebot_subscriber");
     ros::NodeHandle nh;
 
-    ros::Subscriber sub = nh.subscribe("turtle1/pose", 1, turtleCallback);
+    ros::Subscriber sub = nh.subscribe("turtle1/pose", 10, turtleCallback);
     ros::spin();
 
     return 0;
@@ -17,6 +19,6 @@ int main(int argc, char **argv){
 }
 
 void turtleCallback(const turtlesim::Pose::ConstPtr& msg){
-
+    
     ROS_INFO("Turtle subscriber@[%f,%f,%f]", msg->x, msg->y, msg->theta);
 }

@@ -506,30 +506,17 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named controller_pub_node
+# Target rules for targets named turtlebot_subscriber
 
 # Build rule for target.
-controller_pub_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_pub_node
-.PHONY : controller_pub_node
+turtlebot_subscriber: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 turtlebot_subscriber
+.PHONY : turtlebot_subscriber
 
 # fast build rule for target.
-controller_pub_node/fast:
-	$(MAKE) -f turtlebot_controller/CMakeFiles/controller_pub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_pub_node.dir/build
-.PHONY : controller_pub_node/fast
-
-#=============================================================================
-# Target rules for targets named controller_sub_node
-
-# Build rule for target.
-controller_sub_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_sub_node
-.PHONY : controller_sub_node
-
-# fast build rule for target.
-controller_sub_node/fast:
-	$(MAKE) -f turtlebot_controller/CMakeFiles/controller_sub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_sub_node.dir/build
-.PHONY : controller_sub_node/fast
+turtlebot_subscriber/fast:
+	$(MAKE) -f turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/build.make turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/build
+.PHONY : turtlebot_subscriber/fast
 
 #=============================================================================
 # Target rules for targets named std_srvs_generate_messages_py
@@ -556,6 +543,19 @@ turtlesim_generate_messages_eus: cmake_check_build_system
 turtlesim_generate_messages_eus/fast:
 	$(MAKE) -f turtlebot_controller/CMakeFiles/turtlesim_generate_messages_eus.dir/build.make turtlebot_controller/CMakeFiles/turtlesim_generate_messages_eus.dir/build
 .PHONY : turtlesim_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named turtlebot_publisher
+
+# Build rule for target.
+turtlebot_publisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 turtlebot_publisher
+.PHONY : turtlebot_publisher
+
+# fast build rule for target.
+turtlebot_publisher/fast:
+	$(MAKE) -f turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/build.make turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/build
+.PHONY : turtlebot_publisher/fast
 
 #=============================================================================
 # Target rules for targets named turtlesim_generate_messages_lisp
@@ -765,10 +765,10 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... controller_pub_node"
-	@echo "... controller_sub_node"
+	@echo "... turtlebot_subscriber"
 	@echo "... std_srvs_generate_messages_py"
 	@echo "... turtlesim_generate_messages_eus"
+	@echo "... turtlebot_publisher"
 	@echo "... turtlesim_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_nodejs"

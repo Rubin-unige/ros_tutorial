@@ -168,34 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-turtlebot_controller/CMakeFiles/controller_pub_node.dir/rule:
-	cd /home/rubin/my_ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_controller/CMakeFiles/controller_pub_node.dir/rule
-.PHONY : turtlebot_controller/CMakeFiles/controller_pub_node.dir/rule
+turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/rule:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/rule
+.PHONY : turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/rule
 
 # Convenience name for target.
-controller_pub_node: turtlebot_controller/CMakeFiles/controller_pub_node.dir/rule
+turtlebot_subscriber: turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/rule
 
-.PHONY : controller_pub_node
+.PHONY : turtlebot_subscriber
 
 # fast build rule for target.
-controller_pub_node/fast:
-	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_pub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_pub_node.dir/build
-.PHONY : controller_pub_node/fast
-
-# Convenience name for target.
-turtlebot_controller/CMakeFiles/controller_sub_node.dir/rule:
-	cd /home/rubin/my_ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_controller/CMakeFiles/controller_sub_node.dir/rule
-.PHONY : turtlebot_controller/CMakeFiles/controller_sub_node.dir/rule
-
-# Convenience name for target.
-controller_sub_node: turtlebot_controller/CMakeFiles/controller_sub_node.dir/rule
-
-.PHONY : controller_sub_node
-
-# fast build rule for target.
-controller_sub_node/fast:
-	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_sub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_sub_node.dir/build
-.PHONY : controller_sub_node/fast
+turtlebot_subscriber/fast:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/build.make turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/build
+.PHONY : turtlebot_subscriber/fast
 
 # Convenience name for target.
 turtlebot_controller/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
@@ -226,6 +211,21 @@ turtlesim_generate_messages_eus: turtlebot_controller/CMakeFiles/turtlesim_gener
 turtlesim_generate_messages_eus/fast:
 	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/turtlesim_generate_messages_eus.dir/build.make turtlebot_controller/CMakeFiles/turtlesim_generate_messages_eus.dir/build
 .PHONY : turtlesim_generate_messages_eus/fast
+
+# Convenience name for target.
+turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/rule:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/rule
+.PHONY : turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/rule
+
+# Convenience name for target.
+turtlebot_publisher: turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/rule
+
+.PHONY : turtlebot_publisher
+
+# fast build rule for target.
+turtlebot_publisher/fast:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/build.make turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/build
+.PHONY : turtlebot_publisher/fast
 
 # Convenience name for target.
 turtlebot_controller/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule:
@@ -422,59 +422,59 @@ std_srvs_generate_messages_lisp/fast:
 	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make turtlebot_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
 .PHONY : std_srvs_generate_messages_lisp/fast
 
-src/publisher.o: src/publisher.cpp.o
+src/turtlebot_publisher.o: src/turtlebot_publisher.cpp.o
 
-.PHONY : src/publisher.o
-
-# target to build an object file
-src/publisher.cpp.o:
-	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_pub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_pub_node.dir/src/publisher.cpp.o
-.PHONY : src/publisher.cpp.o
-
-src/publisher.i: src/publisher.cpp.i
-
-.PHONY : src/publisher.i
-
-# target to preprocess a source file
-src/publisher.cpp.i:
-	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_pub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_pub_node.dir/src/publisher.cpp.i
-.PHONY : src/publisher.cpp.i
-
-src/publisher.s: src/publisher.cpp.s
-
-.PHONY : src/publisher.s
-
-# target to generate assembly for a file
-src/publisher.cpp.s:
-	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_pub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_pub_node.dir/src/publisher.cpp.s
-.PHONY : src/publisher.cpp.s
-
-src/subscriber.o: src/subscriber.cpp.o
-
-.PHONY : src/subscriber.o
+.PHONY : src/turtlebot_publisher.o
 
 # target to build an object file
-src/subscriber.cpp.o:
-	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_sub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_sub_node.dir/src/subscriber.cpp.o
-.PHONY : src/subscriber.cpp.o
+src/turtlebot_publisher.cpp.o:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/build.make turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.o
+.PHONY : src/turtlebot_publisher.cpp.o
 
-src/subscriber.i: src/subscriber.cpp.i
+src/turtlebot_publisher.i: src/turtlebot_publisher.cpp.i
 
-.PHONY : src/subscriber.i
+.PHONY : src/turtlebot_publisher.i
 
 # target to preprocess a source file
-src/subscriber.cpp.i:
-	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_sub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_sub_node.dir/src/subscriber.cpp.i
-.PHONY : src/subscriber.cpp.i
+src/turtlebot_publisher.cpp.i:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/build.make turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.i
+.PHONY : src/turtlebot_publisher.cpp.i
 
-src/subscriber.s: src/subscriber.cpp.s
+src/turtlebot_publisher.s: src/turtlebot_publisher.cpp.s
 
-.PHONY : src/subscriber.s
+.PHONY : src/turtlebot_publisher.s
 
 # target to generate assembly for a file
-src/subscriber.cpp.s:
-	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/controller_sub_node.dir/build.make turtlebot_controller/CMakeFiles/controller_sub_node.dir/src/subscriber.cpp.s
-.PHONY : src/subscriber.cpp.s
+src/turtlebot_publisher.cpp.s:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/build.make turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.s
+.PHONY : src/turtlebot_publisher.cpp.s
+
+src/turtlebot_subscriber.o: src/turtlebot_subscriber.cpp.o
+
+.PHONY : src/turtlebot_subscriber.o
+
+# target to build an object file
+src/turtlebot_subscriber.cpp.o:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/build.make turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/src/turtlebot_subscriber.cpp.o
+.PHONY : src/turtlebot_subscriber.cpp.o
+
+src/turtlebot_subscriber.i: src/turtlebot_subscriber.cpp.i
+
+.PHONY : src/turtlebot_subscriber.i
+
+# target to preprocess a source file
+src/turtlebot_subscriber.cpp.i:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/build.make turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/src/turtlebot_subscriber.cpp.i
+.PHONY : src/turtlebot_subscriber.cpp.i
+
+src/turtlebot_subscriber.s: src/turtlebot_subscriber.cpp.s
+
+.PHONY : src/turtlebot_subscriber.s
+
+# target to generate assembly for a file
+src/turtlebot_subscriber.cpp.s:
+	cd /home/rubin/my_ros_ws/build && $(MAKE) -f turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/build.make turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir/src/turtlebot_subscriber.cpp.s
+.PHONY : src/turtlebot_subscriber.cpp.s
 
 # Help Target
 help:
@@ -486,10 +486,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... controller_pub_node"
-	@echo "... controller_sub_node"
+	@echo "... turtlebot_subscriber"
 	@echo "... std_srvs_generate_messages_py"
 	@echo "... turtlesim_generate_messages_eus"
+	@echo "... turtlebot_publisher"
 	@echo "... turtlesim_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
@@ -506,12 +506,12 @@ help:
 	@echo "... std_srvs_generate_messages_cpp"
 	@echo "... std_srvs_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... src/publisher.o"
-	@echo "... src/publisher.i"
-	@echo "... src/publisher.s"
-	@echo "... src/subscriber.o"
-	@echo "... src/subscriber.i"
-	@echo "... src/subscriber.s"
+	@echo "... src/turtlebot_publisher.o"
+	@echo "... src/turtlebot_publisher.i"
+	@echo "... src/turtlebot_publisher.s"
+	@echo "... src/turtlebot_subscriber.o"
+	@echo "... src/turtlebot_subscriber.i"
+	@echo "... src/turtlebot_subscriber.s"
 .PHONY : help
 
 

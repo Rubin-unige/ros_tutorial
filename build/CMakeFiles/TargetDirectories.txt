@@ -63,10 +63,10 @@
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/rebuild_cache.dir
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/edit_cache.dir
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/test.dir
-/home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/controller_pub_node.dir
-/home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/controller_sub_node.dir
+/home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/turtlebot_subscriber.dir
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/std_srvs_generate_messages_py.dir
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/turtlesim_generate_messages_eus.dir
+/home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/turtlebot_publisher.dir
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/turtlesim_generate_messages_lisp.dir
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir

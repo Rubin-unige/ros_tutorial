@@ -135,8 +135,8 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(controller_sub_node src/subscriber.cpp)
-add_executable(controller_pub_node src/publisher.cpp)
+add_executable(turtlebot_subscriber src/turtlebot_subscriber.cpp)
+add_executable(turtlebot_publisher src/turtlebot_publisher.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -146,15 +146,15 @@ add_executable(controller_pub_node src/publisher.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(controller_pub_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(controller_sub_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(turtlebot_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(turtlebot_subscriber ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(controller_sub_node
+target_link_libraries(turtlebot_subscriber
    ${catkin_LIBRARIES}
 )
 
-target_link_libraries(controller_pub_node
+target_link_libraries(turtlebot_publisher
    ${catkin_LIBRARIES}
 )
 
