@@ -83,3 +83,12 @@
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/std_srvs_generate_messages_eus.dir
 /home/rubin/my_ros_ws/build/turtlebot_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir
+/home/rubin/my_ros_ws/build/turtlesim_controller/CMakeFiles/install/strip.dir
+/home/rubin/my_ros_ws/build/turtlesim_controller/CMakeFiles/install/local.dir
+/home/rubin/my_ros_ws/build/turtlesim_controller/CMakeFiles/install.dir
+/home/rubin/my_ros_ws/build/turtlesim_controller/CMakeFiles/list_install_components.dir
+/home/rubin/my_ros_ws/build/turtlesim_controller/CMakeFiles/rebuild_cache.dir
+/home/rubin/my_ros_ws/build/turtlesim_controller/CMakeFiles/turtlesim_exercise2.dir
+/home/rubin/my_ros_ws/build/turtlesim_controller/CMakeFiles/edit_cache.dir
+/home/rubin/my_ros_ws/build/turtlesim_controller/CMakeFiles/test.dir
+/home/rubin/my_ros_ws/build/turtlesim_controller/CMakeFiles/turtlesim_modifier.dir

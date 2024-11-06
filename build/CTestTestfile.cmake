@@ -7,3 +7,4 @@
 subdirs("gtest")
 subdirs("my_first_pkg")
 subdirs("turtlebot_controller")
+subdirs("turtlesim_controller")

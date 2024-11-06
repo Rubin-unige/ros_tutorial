@@ -17,11 +17,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "my_first_pkg/catkin_generated/package.cmake"
   "turtlebot_controller/catkin_generated/ordered_paths.cmake"
   "turtlebot_controller/catkin_generated/package.cmake"
+  "turtlesim_controller/catkin_generated/ordered_paths.cmake"
+  "turtlesim_controller/catkin_generated/package.cmake"
   "/home/rubin/my_ros_ws/src/CMakeLists.txt"
   "/home/rubin/my_ros_ws/src/my_first_pkg/CMakeLists.txt"
   "/home/rubin/my_ros_ws/src/my_first_pkg/package.xml"
   "/home/rubin/my_ros_ws/src/turtlebot_controller/CMakeLists.txt"
   "/home/rubin/my_ros_ws/src/turtlebot_controller/package.xml"
+  "/home/rubin/my_ros_ws/src/turtlesim_controller/CMakeLists.txt"
+  "/home/rubin/my_ros_ws/src/turtlesim_controller/package.xml"
   "/opt/ros/noetic/share/catkin/cmake/all.cmake"
   "/opt/ros/noetic/share/catkin/cmake/assert.cmake"
   "/opt/ros/noetic/share/catkin/cmake/atomic_configure_file.cmake"
@@ -194,6 +198,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "my_first_pkg/CMakeFiles/CMakeDirectoryInformation.cmake"
   "turtlebot_controller/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "turtlesim_controller/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -241,4 +246,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "turtlebot_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/DependInfo.cmake"
   "turtlebot_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/DependInfo.cmake"
   "turtlebot_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/DependInfo.cmake"
+  "turtlesim_controller/CMakeFiles/turtlesim_exercise2.dir/DependInfo.cmake"
+  "turtlesim_controller/CMakeFiles/turtlesim_modifier.dir/DependInfo.cmake"
   )

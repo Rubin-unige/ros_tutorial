@@ -726,6 +726,32 @@ std_srvs_generate_messages_lisp/fast:
 	$(MAKE) -f turtlebot_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make turtlebot_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
 .PHONY : std_srvs_generate_messages_lisp/fast
 
+#=============================================================================
+# Target rules for targets named turtlesim_exercise2
+
+# Build rule for target.
+turtlesim_exercise2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 turtlesim_exercise2
+.PHONY : turtlesim_exercise2
+
+# fast build rule for target.
+turtlesim_exercise2/fast:
+	$(MAKE) -f turtlesim_controller/CMakeFiles/turtlesim_exercise2.dir/build.make turtlesim_controller/CMakeFiles/turtlesim_exercise2.dir/build
+.PHONY : turtlesim_exercise2/fast
+
+#=============================================================================
+# Target rules for targets named turtlesim_modifier
+
+# Build rule for target.
+turtlesim_modifier: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 turtlesim_modifier
+.PHONY : turtlesim_modifier
+
+# fast build rule for target.
+turtlesim_modifier/fast:
+	$(MAKE) -f turtlesim_controller/CMakeFiles/turtlesim_modifier.dir/build.make turtlesim_controller/CMakeFiles/turtlesim_modifier.dir/build
+.PHONY : turtlesim_modifier/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -782,6 +808,8 @@ help:
 	@echo "... std_srvs_generate_messages_cpp"
 	@echo "... std_srvs_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_lisp"
+	@echo "... turtlesim_exercise2"
+	@echo "... turtlesim_modifier"
 .PHONY : help
 
 

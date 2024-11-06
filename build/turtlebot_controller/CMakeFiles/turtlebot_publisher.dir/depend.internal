@@ -62,5 +62,8 @@ turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.
  /opt/ros/noetic/include/ros/wall_timer_options.h
  /opt/ros/noetic/include/rosconsole/macros_generated.h
  /opt/ros/noetic/include/turtlesim/Pose.h
+ /opt/ros/noetic/include/turtlesim/Spawn.h
+ /opt/ros/noetic/include/turtlesim/SpawnRequest.h
+ /opt/ros/noetic/include/turtlesim/SpawnResponse.h
  /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h

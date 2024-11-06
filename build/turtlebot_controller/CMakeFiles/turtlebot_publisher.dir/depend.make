@@ -61,6 +61,9 @@ turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.
 turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.o: /opt/ros/noetic/include/ros/wall_timer_options.h
 turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.o: /opt/ros/noetic/include/rosconsole/macros_generated.h
 turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.o: /opt/ros/noetic/include/turtlesim/Pose.h
+turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.o: /opt/ros/noetic/include/turtlesim/Spawn.h
+turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.o: /opt/ros/noetic/include/turtlesim/SpawnRequest.h
+turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.o: /opt/ros/noetic/include/turtlesim/SpawnResponse.h
 turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
 turtlebot_controller/CMakeFiles/turtlebot_publisher.dir/src/turtlebot_publisher.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
 
