@@ -41,36 +41,42 @@ This node ensures that the turtles maintain safe distances from each other and s
 
 The root of this repository is the package folder. When pulling the repository for the first time, place it directly in the src folder of your workspace.
 
-## Getting started (read before action)
+## Getting Started (Read Before Action)
 
 ### Prerequisites
-Ensure the following packages are installed:
-```
+
+Before proceeding, make sure that **ROS Noetic** is installed on your system.<br>
+If you haven’t set up ROS yet, check this website to install ROS: <br>
+(https://wiki.ros.org/noetic/Installation/Ubuntu) <br>
+
+Additionally, you’ll need the **`turtlesim`** package to run this project. Install it by running:
+```bash
 sudo apt-get update
-sudo apt-get install ros-neotic-turtlesim
+sudo apt-get install ros-noetic-turtlesim
 ```
+then you can proceed to cloning the repository.
 
 ### Clone the Repository
 
 Create a new workspace:
-```
+```bash
 mkdir -p ~/my_new_ws/src
 cd ~/my_new_ws/src
 ```
 
 Clone this repository:
-```
+```bash
 git clone https://github.com/Rubin-unige/assignment1_rt.git
 ```
 
 Source the workspace by adding it to your .bashrc file:
-```
+```bash
 echo "source ~/my_new_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
 Return to the workspace root directory and build the package:
-```
+```bash
 cd ~/my_new_ws
 catkin_make
 ```
