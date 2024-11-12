@@ -2,7 +2,7 @@
 
 This is the assignment work for the **Research Track** course,  
 done by: <br>
-**Rubin Khadka Chhetri**
+**Rubin Khadka Chhetri** <br>
 **6558048**
 
 ## Introduction
