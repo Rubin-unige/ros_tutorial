@@ -2,51 +2,32 @@
 
 This is the assignment work for the **Research Track** course,  
 done by: <br>
-**Rubin Khadka Chhetri** <br>
-**6558048**
+**Rubin Khadka Chhetri**<br>
+**6558048**<br>
 
 ## Introduction
 
-This repository contains the code for the First Assignment of the Research Track I course, designed to provide hands-on experience with ROS (Robot Operating System) using the turtlesim simulator. The assignment is structured around creating a ROS package named assignment1_rt, which includes two nodes with distinct functionalities: a User Interface (UI) node and a Distance Monitoring node.
+Repository Contents
+This repository includes:
 
-1. **Node 1: User Interface (UI)**: The UI node allows users to control one of the two turtles in the simulation (turtle1 or turtle2).
-- This node:   Spawns a new turtle, named turtle2, in the simulation environment.
-Provides a simple text-based interface to accept user commands. Users can select which turtle they want to control (turtle1 or turtle2) and specify the turtle's linear and angular velocities.
-Sends movement commands to the selected turtle for a duration of 1 second, after which the turtle stops. The user can then input a new command to control the turtle again.
+Two ROS nodes:
+turtle_user_interface: Allows a user to interact with and control two turtles in the simulation.
+turtle_distance_monitor: Continuously monitors and manages the distance between the turtles, ensuring they stay within safe bounds.
 
-2. **Node 2: Distance Monitoring**
-The Distance node is responsible for monitoring the position of the turtles relative to each other and to the environment boundaries. 
-- This node:   Continuously checks the distance between turtle1 and turtle2 and publishes this distance to a dedicated topic using std_msgs/Float32.
-Ensures safety by stopping a moving turtle if the turtles come too close to each other or if a turtle gets too close to the boundary limits (e.g., if x or y coordinates are greater than 10.0 or less than 1.0).
+### Node Details
+1. **User Inteface Node (user_interface)**
+This node handles user interactions, allowing control of the two turtles in the simulator (turtle1 and turtle2). Specifically, it:
 
-## Repository Structure
+Spawns a second turtle (turtle2) in the simulator at a specified position.
+Prompts the user to select which turtle to control (turtle1 or turtle2).
+Takes user input for the turtle's linear and angular velocity.
+Sends movement commands to the selected turtle for one second before stopping and prompting for the next command.
+This node allows the user to control turtle movements step-by-step through a simple command-line interface.
 
-The root of this repository is the **ROS package** folder. After cloning the repository, you should place it inside the `src` folder of your ROS workspace.
+2. **Distance Monitor Node (distance_monitor)**
+This node ensures the turtles maintain safe distances from each other and from the simulator boundaries. It:
 
-### Directory Structure:
-
-
-
-## Getting Started
-
-Follow these steps to get your environment ready for running the ROS program.
-
-### Prerequisites
-
-1. **ROS Installation**: Ensure that you have **ROS** installed on your system (this code has been tested with **ROS Noetic**).
-   - Follow the instructions on the [ROS website](http://www.ros.org) for installing ROS.
-   
-2. **Install Dependencies**:
-   - Install the `turtlesim` package if you don't have it:
-     ```bash
-     sudo apt-get install ros-noetic-turtlesim
-     ```
-
-### Clone the Repository
-
-Create a new workspace and clone the repository into the `src` folder:
-
-```bash
-mkdir -p ~/my_new_ws/src
-cd ~/my_new_ws/src
-git clone https://github.com/Rubin-unige/assignment1_rt.git
+Calculates the distance between turtle1 and turtle2 continuously.
+Publishes this distance on a dedicated ROS topic for monitoring.
+Stops a turtle if it comes too close to the other turtle or approaches the edges of the simulator (pre-defined boundary limits).
+This node acts as a safety mechanism, helping to manage the turtles' interactions within the environment.
