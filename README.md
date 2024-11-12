@@ -1,33 +1,42 @@
-# Research Track First Assignment
+# Research Track I - First Assignment
 
-This is the assignment work for the **Research Track** course, done by: <br>
+This repository contains the assignment work for the **Research Track** course, completed by:<br>
 **Rubin Khadka Chhetri**<br>
-**6558048**<br>
+**ID: 6558048**<br>
 
 ## Introduction
 
-This repository contains two main ROS nodes: the **User Interface node** and the **Distance Monitor node**. These nodes work together to provide a simple but interactive control and monitoring system for two turtles in the turtlesim simulation environment. Below are the details of each node: <br>
+This repository implements a ROS package containing two main nodes:
 
-### Node Details
+-  **User Interface node** 
+-  **Distance Monitor node**
 
-1. **User Interface Node (user_interface)**
+These nodes work together within the **`turtlesim`** simulation environment to create a simple, interactive system for controlling and monitoring two turtles. Below are details about each node and its functionality.
 
-This node is responsible for handling user input and controlling the movements of two turtles (turtle1 and turtle2) in the simulator. Its key functions include:<br>
+## Node Details
 
--  Spawns a second turtle (turtle2) in the simulation environment.
--  Prompts the user to:
-   -  Select which turtle to control (either turtle1 or turtle2).
-   -  Set the selected turtle's linear and angular velocities.
--  Sends movement commands to the selected turtle, causing it to move for one second. After the movement, the turtle stops, and the interface is ready to accept the next command.
+### 1. **User Interface Node (`user_interface`)**
 
-This node provides a simple and interactive way for users to control turtle movements through the command line.
+The `user_interface` node is responsible for receiving user inputs and controlling the movement of two turtles (`turtle1` and `turtle2`) in the simulator. Its main features include:
 
-2. **Distance Monitor Node (distance_monitor)**
+- **Turtle Spawning**: Spawns a second turtle (`turtle2`) in the simulation environment.
+- **Command-line Interaction**: Prompts the user to:
+  - Choose which turtle to control (either `turtle1` or `turtle2`).
+  - Specify the linear and angular velocities for the selected turtle.
+- **Timed Movement Control**: Sends movement commands to the selected turtle, causing it to move for one second. Afterward, the turtle stops, and the interface is ready for the next command.
 
-The Distance Monitor node ensures that the turtles maintain safe distances from each other and stay within the boundaries of the simulation environment. This node continuously calculates and monitors turtle positions. Its key features are:<br>
+This node provides a straightforward way for users to control turtle movements in real time using a command-line interface.
 
--  Continuously calculates the distance between turtle1 and turtle2 and publishes this information on a dedicated ROS topic for monitoring.
--  Automatically stops a turtle if it approaches the other turtle.
--  Stops a turtle if it's position is too close to the boundaries.
+### 2. **Distance Monitor Node (`distance_monitor`)**
 
-This node acts as a safety mechanism to manage turtle interactions and prevent them from colliding or moving out of bounds.<br>
+The `distance_monitor` node is designed to ensure the turtles maintain safe distances from each other and remain within the boundaries of the simulation area. It continuously monitors and calculates the positions of both turtles, and its main features are:
+
+- **Distance Monitoring**: Continuously calculates the distance between `turtle1` and `turtle2`, publishing this data on a ROS topic for real-time monitoring.
+- **Collision Prevention**: Automatically stops a turtle if it gets too close to the other turtle.
+- **Boundary Enforcement**: Stops a turtle if it moves too close to the simulation boundaries, preventing it from exiting the allowed area.
+
+This node acts as a safety mechanism to prevent collisions and boundary violations, ensuring controlled interactions between the turtles in the simulation environment.
+
+---
+
+This package combines user-controlled movement with automated safety monitoring, allowing for interactive and safe exploration within the `turtlesim` simulator.
