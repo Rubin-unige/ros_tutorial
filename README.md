@@ -39,7 +39,21 @@ This node ensures that the turtles maintain safe distances from each other and s
 
 ## Repository Structure
 
-The root of this repository is the package folder. When pulling the repository for the first time, place it directly in the src folder of your workspace.
+The root of this repository is the package folder, which contains all necessary files and scripts for running the assignment nodes. When cloning the repository for the first time, place it directly in the `src` folder of your ROS workspace.
+
+### Folder and File Overview
+
+- **`/scripts`**: Contains Python scripts used for the nodes in this project. 
+  - `user_interface.py`: Implements the user interface node, which enables user control of turtle movement.
+  - `distance_monitor.py`: Implements the distance monitor node, which ensures safe distances between turtles and enforces boundary limits.
+
+- **`/src`**: Holds C++ source files, if any, used in the project.
+  - `user_interface.cpp`: C++ version of the user interface node (if applicable).
+  - `distance_monitor.cpp`: C++ version of the distance monitor node (if applicable).
+
+- **`/CMakeLists.txt`** and **`package.xml`**: Configuration files for building and managing dependencies in the ROS package. 
+  - `CMakeLists.txt`: Specifies the package build rules.
+  - `package.xml`: Lists dependencies and package metadata.
 
 ## Getting Started (Read Before Action)
 
