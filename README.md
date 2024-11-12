@@ -17,7 +17,7 @@ This assignment was completed using both **Python** and **C++**.
 
 Below are details about each node and its functionality.<br>
 
-### Node Details
+## Node Details
 
 1. **User Interface Node** (`user_interface`)
 
@@ -37,4 +37,40 @@ This node ensures that the turtles maintain safe distances from each other and s
 -  Automatically stops a turtle if it approaches the other turtle.
 -  Stops a turtle if it's position is too close to the boundaries.
 
+## Repository Structure
 
+The root of this repository is the package folder. When pulling the repository for the first time, place it directly in the src folder of your workspace.
+
+## Getting started (read before action)
+
+### Prerequisites
+Ensure the following packages are installed:
+```
+sudo apt-get update
+sudo apt-get install ros-neotic-turtlesim
+```
+
+### Clone the Repository
+
+Create a new workspace:
+```
+mkdir -p ~/my_new_ws/src
+cd ~/my_new_ws/src
+```
+
+Clone this repository:
+```
+git clone https://github.com/Rubin-unige/assignment1_rt.git
+```
+
+Source the workspace by adding it to your .bashrc file:
+```
+echo "source ~/my_new_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+Return to the workspace root directory and build the package:
+```
+cd ~/my_new_ws
+catkin_make
+```
