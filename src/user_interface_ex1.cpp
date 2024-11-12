@@ -5,7 +5,8 @@
 #include <turtlesim/Spawn.h>
 #include <geometry_msgs/Twist.h>
 #include <iostream>
-#include <unistd.h>  
+#include <unistd.h>
+#include <limits>
 
 float linear_x, angular_z;
 
@@ -17,7 +18,7 @@ int main( int argc, char **argv){
 
     // Initialise service client
     ros::ServiceClient client_spawn = nh.serviceClient <turtlesim::Spawn> ("/spawn");
-    // Spawn turtle 2
+    // Spawn turtle2
     turtlesim::Spawn spawn_srv;
     spawn_srv.request.x = 5.0;
     spawn_srv.request.y = 2.0;
@@ -34,14 +35,30 @@ int main( int argc, char **argv){
     while (ros::ok())
     {
         // User input
-        std::cout << "Enter the turtle you want to control(turtle1 or turtle2): ";
+        std::cout << "Enter the turtle you want to control (turtle1 or turtle2): ";
         std::cin >> turtle_name;
-        // Ask user to enter the velocities
-        std::cout << "Enter the linear velocity x: ";
-        std::cin >> linear_x;
-        std::cout << "Enter the angular velocity z: ";
-        std::cin >> angular_z;
 
+        // Check if the turtle name is valid
+        if (turtle_name != "turtle1" && turtle_name != "turtle2") {
+            std::cout << "Invalid turtle name. Please enter 'turtle1' or 'turtle2'.\n";
+            continue;
+        }
+
+        // Get the velocities 
+        std::cout << "Enter the linear velocity x: ";
+        while (!(std::cin >> linear_x)) { // Check if the input is float
+            std::cout << "Invalid input. Please enter a valid number for linear velocity: ";
+            std::cin.clear(); // Clear error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+        std::cout << "Enter the angular velocity z: ";
+        while (!(std::cin >> angular_z)) {
+            std::cout << "Invalid input. Please enter a valid number for angular velocity: ";
+            std::cin.clear(); //
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+        }
+
+        // Create geometry msgs to move the turtle
         geometry_msgs::Twist turtle_vel;
         turtle_name.linear.x = linear_x;
         turtle_name.angular.z = angular_z;
@@ -63,15 +80,9 @@ int main( int argc, char **argv){
             move_cmd.angular.z = 0;
             pub_turtle2.publish(move_cmd); 
         } 
-        // Invalid input
-        else {
-            ROS_WARN("Invalid turtle name. Please choose 'turtle1' or 'turtle2'.");
-        }
 
         ros::spinOnce(); 
-
     }
     
-    return 0;
-    
+    return 0; 
 }
