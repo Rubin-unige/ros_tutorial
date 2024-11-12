@@ -58,25 +58,34 @@ then you can proceed to cloning the repository.
 
 ### Clone the Repository
 
-Create a new workspace:
+1. Set up your ROS workspace:
+
+Create a new workspace (or use an existing one) and navigate to its `src` directory:
 ```bash
 mkdir -p ~/my_new_ws/src
 cd ~/my_new_ws/src
 ```
 
-Clone this repository:
+2. Clone this repository:
+
+Clone the assignment repository into your workspace’s `src` folder:
 ```bash
 git clone https://github.com/Rubin-unige/assignment1_rt.git
 ```
+3. Add the Workspace to Your ROS Environment
 
-Source the workspace by adding it to your .bashrc file:
+To ensure your workspace is sourced every time a new terminal session starts, add it to your `.bashrc` file:
 ```bash
 echo "source ~/my_new_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Return to the workspace root directory and build the package:
+4. Build the Package
+
+Navigate to the root of your workspace and build the package using `catkin_make`:
 ```bash
 cd ~/my_new_ws
 catkin_make
 ```
+
+After building, your workspace should be ready to launch the nodes in the package.
