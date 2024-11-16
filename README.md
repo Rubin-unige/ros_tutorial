@@ -153,6 +153,8 @@ rosrun assignment1_rt distance_monitor.py
 ```
 This will start both the **Python user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
-4. Stopping the nodes
+4. **Stopping the nodes**
+
+To stop the nodes, simply press `Ctrl+C` in the terminal where each node is running (`User Interface`, `Distance Monitor`, `Turtlesim`, or `roscore`). This will terminate the nodes and stop the simulation.
 
 ## Implementation
