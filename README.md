@@ -153,17 +153,14 @@ chmod +x ~/my_new_ws/src/assignment1_rt/scripts/user_interface.py
 chmod +x ~/my_new_ws/src/assignment1_rt/scripts/distance_monitor.py
 ```
 Then, in the same terminal, run:
-- the Python User Interface Node:
-
+- Python User Interface Node:
 ```bash
 rosrun assignment1_rt user_interface.py
 ```
 This will launch the Python User Interface node. Follow the prompts to select the turtle and enter velocity commands.
 
-- Run the Python Distance Monitor Node:
-
 Next, in a new terminal, run:
-
+- Python Distance Monitor Node:
 ```bash
 rosrun assignment1_rt distance_monitor.py
 ```
