@@ -109,17 +109,12 @@ After building, your workspace should be ready to launch the nodes in the packag
 1. **Start the ROS Master**
 
 Before running any ROS nodes, make sure the ROS Master is up and running. Open a terminal and start roscore:
-
 ```bash
 roscore
 ```
-
-This command will start the ROS master, which is responsible for managing the communication between the nodes. You should leave this terminal open and running.
-
 2. **Run the Turtlesim Node**
 
 The turtlesim node provides the simulation environment with the two turtles (turtle1 and turtle2). Open a new terminal and run:
-
 ```bash
 rosrun turtlesim turtlesim_node
 ```
@@ -131,22 +126,23 @@ At this point, you can proceed to either run the C++ version or the Python versi
 ### Running the C++ Version
 
 To run the C++ nodes (both the User Interface and Distance Monitor nodes), follow these steps:
-
-- Run the C++ User Interface Node:
+Open new terminal and run
+- C++ User Interface Node:
 
 ```bash
 rosrun assignment1_rt user_interface
 ```
 This will launch the C++ User Interface node. Follow the prompts to select the turtle and enter velocity commands.
 
-- Run the C++ Distance Monitor Node:
+Similarly, open another terminal and run:
 
-Open another terminal and run:
-
+- C++ Distance Monitor Node:
 ```bash
 rosrun assignment1_rt distance_monitor
 ```
 This node will continuously monitor the distances between turtle1 and turtle2, stopping them if necessary.
+
+At this point you have four terminals running ros master, turtlesim node and the two turtle control nodes.
 
 ### Running the Python Version
 
