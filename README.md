@@ -59,7 +59,7 @@ The root of this repository is the package folder, which contains all necessary 
 
 ### Prerequisites
 
-Before proceeding, make sure that `**ROS Noetic**` is installed on your system.<br>
+Before proceeding, make sure that **`ROS Noetic`** is installed on your system.<br>
 If you haven’t set up ROS yet, check this website to install ROS: <br>
 (https://wiki.ros.org/noetic/Installation/Ubuntu) <br>
 
