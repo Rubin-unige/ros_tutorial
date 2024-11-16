@@ -108,31 +108,32 @@ After building, your workspace should be ready to launch the nodes in the packag
 
 1. **Start the ROS Master**
 
-Before running any ROS nodes, make sure the ROS Master is up and running. Open a terminal and start roscore:
+Before running any ROS nodes, make sure the ROS Master is up and running. Open a terminal and start `roscore`:
 ```bash
 roscore
 ```
+
 2. **Run the Turtlesim Node**
 
-The turtlesim node provides the simulation environment with the two turtles (turtle1 and turtle2). Open a new terminal and run:
+Next, start the `Turtlesim` node in a new terminal to launch the simulation environment:
 ```bash
 rosrun turtlesim turtlesim_node
 ```
 This will open the turtlesim window where the turtles will appear.
 
 3. **Run the User Interface and Distance Monitor Nodes**
-At this point, you can proceed to either run the C++ version or the Python version of the User Interface and Distance Monitor nodes.
+At this point, you can proceed to either run the C++ version or the Python version of the `User Interface` and `Distance Monitor` nodes.
 
 ### Running the C++ Version
 
 To run the C++ nodes (both the User Interface and Distance Monitor nodes), follow these steps:
-Open new terminal and run
+Keep the `roscore` and `turtlesim` node running. Then, open new terminal and run
 - C++ User Interface Node:
 
 ```bash
 rosrun assignment1_rt user_interface
 ```
-This will launch the C++ User Interface node. Follow the prompts to select the turtle and enter velocity commands.
+This will prompt user to select a turtle and enter velocity commands.
 
 Similarly, open another terminal and run:
 
@@ -140,17 +141,19 @@ Similarly, open another terminal and run:
 ```bash
 rosrun assignment1_rt distance_monitor
 ```
-This node will continuously monitor the distances between turtle1 and turtle2, stopping them if necessary.
-
-At this point you have four terminals running ros master, turtlesim node and the two turtle control nodes.
+This node will continuously monitor the distances between `turtle1` and `turtle2`.
 
 ### Running the Python Version
 
 To run the Python nodes (both the User Interface and Distance Monitor nodes), follow these steps:
 
-- Run the Python User Interface Node:
-
-In the terminal, run:
+Before running the Python scripts, you need to ensure they are executable. Run the following command for each Python script (user_interface.py and distance_monitor.py):
+``` bash
+chmod +x ~/my_new_ws/src/assignment1_rt/scripts/user_interface.py
+chmod +x ~/my_new_ws/src/assignment1_rt/scripts/distance_monitor.py
+```
+Then, in the same terminal, run:
+- the Python User Interface Node:
 
 ```bash
 rosrun assignment1_rt user_interface.py
@@ -159,10 +162,10 @@ This will launch the Python User Interface node. Follow the prompts to select th
 
 - Run the Python Distance Monitor Node:
 
-In a new terminal, run:
+Next, in a new terminal, run:
 
 ```bash
 rosrun assignment1_rt distance_monitor.py
 ```
-This node will continuously monitor the distances between turtle1 and turtle2 and stop them if needed.
+This node will continuously monitor the distances between `turtle1` and `turtle2` and stop them if needed.
 
