@@ -118,7 +118,7 @@ This will open the Turtlesim window where the turtles (`turtle1` and `turtle2`) 
 At this point, you can proceed to run either the **C++** or **Python** version of the `User Interface` and `Distance Monitor` nodes, depending on which implementation you want to use.
 
 ### Running the C++ Version
----
+--
 To run the C++ nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
 
@@ -133,7 +133,7 @@ rosrun assignment1_rt distance_monitor
 This will start both the **C++ user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
 ### Running the Python 
----
+--
 To run the Python nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
 
