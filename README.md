@@ -1,11 +1,9 @@
 # Research Track I - First Assignment
-
 This repository contains the assignment work for the **Research Track** course, completed by:  
 **Rubin Khadka Chhetri**  
 **ID: 6558048**
 
 ## Introduction
-
 This repository implements a ROS package containing two main nodes: 
 
 -  **User Interface node**
@@ -18,7 +16,6 @@ This assignment was completed using both **Python** and **C++**.
 Below are details about each node and its functionality.<br>
 
 ## Node Details
-
 1. **User Interface Node** (`user_interface`)
 
 This node is responsible for handling user input and controlling the movements of two turtles (`turtle1` and `turtle2`) in the simulator. Its key functions include:<br>
@@ -38,11 +35,9 @@ This node ensures that the turtles maintain safe distances from each other and s
 -  Stops a turtle if it's position is too close to the boundaries.
 
 ## Repository Structure
-
 The root of this repository is the package folder, which contains all necessary files and scripts for running the assignment nodes. When cloning the repository for the first time, place it directly in the `src` folder of your ROS workspace.
 
 ### Folder and File Overview
-
 - **`/scripts`**: Contains Python scripts used for the nodes in this project. 
   - `user_interface.py`: Python version of user interface node.
   - `distance_monitor.py`: Python version of distance monitor node.
@@ -60,7 +55,6 @@ The root of this repository is the package folder, which contains all necessary 
 ## Getting Started (Read Before Action)
 
 ### Prerequisites
-
 Before proceeding, make sure that **`ROS Noetic`** is installed on your system.<br>
 If you haven’t set up ROS yet, check this official guide to install ROS: <br>
 (https://wiki.ros.org/noetic/Installation/Ubuntu) <br>
@@ -74,7 +68,6 @@ sudo apt-get install python3
 After installation, you can proceed to cloning the repository.
 
 ### Clone the Repository
-
 1. **Set up your ROS workspace**
 
 Create a new workspace (or use an existing one) and navigate to its `src` directory:
@@ -125,8 +118,7 @@ This will open the Turtlesim window where the turtles (`turtle1` and `turtle2`) 
 At this point, you can proceed to run either the **C++** or **Python** version of the `User Interface` and `Distance Monitor` nodes, depending on which implementation you want to use.
 
 ### Running the C++ Version
-
-To run the C++ nodes (both the User Interface and Distance Monitor nodes), follow these steps:
+To run the C++ nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
 
 - In a new terminal, run the **C++ User Interface Node**:
