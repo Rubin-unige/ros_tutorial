@@ -1,4 +1,5 @@
 # Research Track I - First Assignment
+---
 This repository contains the assignment work for the **Research Track** course, completed by:  
 **Rubin Khadka Chhetri**  
 **ID: 6558048**
@@ -133,7 +134,7 @@ rosrun assignment1_rt distance_monitor
 This will start both the **C++ user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
 ### Running the Python 
---
+
 To run the Python nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
 
