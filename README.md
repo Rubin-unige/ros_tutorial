@@ -66,7 +66,7 @@ sudo apt-get install ros-noetic-turtlesim
 sudo apt-get install python3
 ```
 After installation, you can proceed to cloning the repository.
----
+
 ### Clone the Repository
 1. **Set up your ROS workspace**
 
@@ -96,7 +96,7 @@ cd ~/my_new_ws
 catkin_make
 ```
 After building, your workspace will be ready to launch the nodes in the package.
----
+
 ## Running Everything
 
 1. **Start the ROS Master**
@@ -118,6 +118,7 @@ This will open the Turtlesim window where the turtles (`turtle1` and `turtle2`) 
 At this point, you can proceed to run either the **C++** or **Python** version of the `User Interface` and `Distance Monitor` nodes, depending on which implementation you want to use.
 
 ### Running the C++ Version
+---
 To run the C++ nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
 
@@ -131,7 +132,8 @@ rosrun assignment1_rt distance_monitor
 ```
 This will start both the **C++ user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
-### Running the Python Version
+### Running the Python 
+---
 To run the Python nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
 
