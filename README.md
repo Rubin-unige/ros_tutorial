@@ -38,9 +38,9 @@ This node ensures that the turtles maintain safe distances from each other and s
 The root of this repository is the package folder, which contains all necessary files and scripts for running the assignment nodes. When cloning the repository for the first time, place it directly in the `src` folder of your ROS workspace.
 
 ### Folder and File Overview
-- **`/msg`**:
-  - `turtle_distance.msg`:
-  
+- **`/msg`**: Contains custom message definitions.
+  - `turtle_distance.msg`: Custom message for distance monitoring and boundary status.
+
 - **`/scripts`**: Contains Python scripts used for the nodes in this project. 
   - `user_interface.py`: Python version of user interface node.
   - `distance_monitor.py`: Python version of distance monitor node.
