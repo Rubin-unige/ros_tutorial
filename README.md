@@ -100,7 +100,7 @@ catkin_make
 ```
 After building, your workspace will be ready to launch the nodes in the package.
 
-## Running Everything
+## Launch Simulation and Nodes
 
 1. **Start the ROS Master**
 
