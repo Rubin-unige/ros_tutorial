@@ -104,7 +104,7 @@ catkin_make
 
 After building, your workspace should be ready to launch the nodes in the package.
 
-## Run 
+## Running Everything
 
 1. **Start the ROS Master**
 
@@ -128,18 +128,18 @@ This will open the turtlesim window where the turtles will appear.
 3. **Run the User Interface and Distance Monitor Nodes**
 At this point, you can proceed to either run the C++ version or the Python version of the User Interface and Distance Monitor nodes.
 
-## Running the C++ Version
+### Running the C++ Version
 
 To run the C++ nodes (both the User Interface and Distance Monitor nodes), follow these steps:
 
-  - Run the C++ User Interface Node:
+- Run the C++ User Interface Node:
 
 ```bash
 rosrun assignment1_rt user_interface
 ```
 This will launch the C++ User Interface node. Follow the prompts to select the turtle and enter velocity commands.
 
-Run the C++ Distance Monitor Node:
+- Run the C++ Distance Monitor Node:
 
 Open another terminal and run:
 
@@ -148,25 +148,25 @@ rosrun assignment1_rt distance_monitor
 ```
 This node will continuously monitor the distances between turtle1 and turtle2, stopping them if necessary.
 
-## Running the Python Version
+### Running the Python Version
 
 To run the Python nodes (both the User Interface and Distance Monitor nodes), follow these steps:
 
-Run the Python User Interface Node:
+- Run the Python User Interface Node:
 
 In the terminal, run:
 
-bash
-Copy code
+```bash
 rosrun assignment1_rt user_interface.py
+```
 This will launch the Python User Interface node. Follow the prompts to select the turtle and enter velocity commands.
 
-Run the Python Distance Monitor Node:
+- Run the Python Distance Monitor Node:
 
 In a new terminal, run:
 
-bash
-Copy code
+```bash
 rosrun assignment1_rt distance_monitor.py
+```
 This node will continuously monitor the distances between turtle1 and turtle2 and stop them if needed.
 
