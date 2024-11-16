@@ -39,7 +39,7 @@ The root of this repository is the package folder, which contains all necessary 
 
 ### Folder and File Overview
 - **`/msg`**: Contains custom message definitions.
-  - `turtle_distance.msg`: Custom message for distance monitoring and boundary status.
+  - `turtle_distance.msg`: Custom message file for distance monitoring and boundary status.
 
 - **`/scripts`**: Contains Python scripts used for the nodes in this project. 
   - `user_interface.py`: Python version of user interface node.
