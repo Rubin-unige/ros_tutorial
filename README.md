@@ -66,7 +66,7 @@ sudo apt-get install ros-noetic-turtlesim
 sudo apt-get install python3
 ```
 After installation, you can proceed to cloning the repository.
-
+---
 ### Clone the Repository
 1. **Set up your ROS workspace**
 
@@ -96,7 +96,7 @@ cd ~/my_new_ws
 catkin_make
 ```
 After building, your workspace will be ready to launch the nodes in the package.
-
+---
 ## Running Everything
 
 1. **Start the ROS Master**
