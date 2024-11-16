@@ -44,31 +44,34 @@ The root of this repository is the package folder, which contains all necessary 
 ### Folder and File Overview
 
 - **`/scripts`**: Contains Python scripts used for the nodes in this project. 
-  - `user_interface.py`: Implements the user interface node, which enables user control of turtle movement.
-  - `distance_monitor.py`: Implements the distance monitor node, which ensures safe distances between turtles and enforces boundary limits.
+  - `user_interface.py`: Python version of user interface node.
+  - `distance_monitor.py`: Python version of distance monitor node.
 
-- **`/src`**: Holds C++ source files.
+- **`/src`**: Contains C++ source files.
   - `user_interface.cpp`: C++ version of the user interface node.
   - `distance_monitor.cpp`: C++ version of the distance monitor node.
 
-- **`/CMakeLists.txt`** and **`package.xml`**: Configuration files for building and managing dependencies in the ROS package. 
-  - `CMakeLists.txt`: Specifies the package build rules.
-  - `package.xml`: Lists dependencies and package metadata.
+- **`/CMakeLists.txt`**: Specifies the package build rules.
+
+- **`/package.xml`**: Lists dependencies and package metadata.
+
+- **`/README.md`**: Read me file.
 
 ## Getting Started (Read Before Action)
 
 ### Prerequisites
 
 Before proceeding, make sure that **`ROS Noetic`** is installed on your system.<br>
-If you haven’t set up ROS yet, check this website to install ROS: <br>
+If you haven’t set up ROS yet, check this official guide to install ROS: <br>
 (https://wiki.ros.org/noetic/Installation/Ubuntu) <br>
 
-Additionally, you’ll need the **`turtlesim`** package to run this project. Install it by running:
+Additionally, you’ll need **`Python 3`** and **`turtlesim`** package to run this project. Ensure they are installed on your system. If not, you can install them by running:
 ```bash
 sudo apt-get update
 sudo apt-get install ros-noetic-turtlesim
+sudo apt-get install python3
 ```
-then you can proceed to cloning the repository.
+After installation, you can proceed to cloning the repository.
 
 ### Clone the Repository
 
@@ -79,7 +82,6 @@ Create a new workspace (or use an existing one) and navigate to its `src` direct
 mkdir -p ~/my_new_ws/src
 cd ~/my_new_ws/src
 ```
-
 2. **Clone this repository**
 
 Clone the assignment repository into your workspace’s `src` folder:
@@ -88,12 +90,11 @@ git clone https://github.com/Rubin-unige/assignment1_rt.git
 ```
 3. **Add the Workspace to Your ROS Environment**
 
-To ensure your workspace is sourced every time a new terminal session starts, add it to your `.bashrc` file:
+To ensure that your workspace is sourced automatically every time you start a new terminal session, add it to your `.bashrc` file:
 ```bash
 echo "source ~/my_new_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-
 4. **Build the Package**
 
 Navigate to the root of your workspace and build the package using `catkin_make`:
@@ -101,8 +102,7 @@ Navigate to the root of your workspace and build the package using `catkin_make`
 cd ~/my_new_ws
 catkin_make
 ```
-
-After building, your workspace should be ready to launch the nodes in the package.
+After building, your workspace will be ready to launch the nodes in the package.
 
 ## Running Everything
 
@@ -112,36 +112,32 @@ Before running any ROS nodes, make sure the ROS Master is up and running. Open a
 ```bash
 roscore
 ```
-
 2. **Run the Turtlesim Node**
 
 Next, start the `Turtlesim` node in a new terminal to launch the simulation environment:
 ```bash
 rosrun turtlesim turtlesim_node
 ```
-This will open the turtlesim window where the turtles will appear.
+This will open the Turtlesim window where the turtles (`turtle1` and `turtle2`) will appear.
 
 3. **Run the User Interface and Distance Monitor Nodes**
-At this point, you can proceed to either run the C++ version or the Python version of the `User Interface` and `Distance Monitor` nodes.
+
+At this point, you can proceed to run either the **C++** or **Python** version of the `User Interface` and `Distance Monitor` nodes, depending on which implementation you want to use.
 
 ### Running the C++ Version
 
 To run the C++ nodes (both the User Interface and Distance Monitor nodes), follow these steps:
-Keep the `roscore` and `turtlesim` node running. Then, open new terminal and run
-- C++ User Interface Node:
+- Make sure that the `roscore` and `turtlesim` nodes are running.
 
+- In a new terminal, run the **C++ User Interface Node**:
 ```bash
 rosrun assignment1_rt user_interface
 ```
-This will prompt user to select a turtle and enter velocity commands.
-
-Similarly, open another terminal and run:
-
-- C++ Distance Monitor Node:
+- In another terminal, run the **C++ Distance Monitor Node**:
 ```bash
 rosrun assignment1_rt distance_monitor
 ```
-This node will continuously monitor the distances between `turtle1` and `turtle2`.
+This will start both the **C++ user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
 ### Running the Python Version
 
