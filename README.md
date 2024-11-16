@@ -99,7 +99,7 @@ After building, your workspace will be ready to launch the nodes in the package.
 
 ## Running Everything
 
-### Start the ROS Master
+1. **Start the ROS Master**
 
 Before running any ROS nodes, make sure the ROS Master is up and running. Open a terminal and start `roscore`:
 ```bash
