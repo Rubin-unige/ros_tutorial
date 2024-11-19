@@ -207,8 +207,7 @@ if (turtle_name != "turtle1" && turtle_name != "turtle2") {
 
 The user is then asked to input the linear and angular velocities. The program uses error handling to ensure only valid numerical values are entered.
 
-  1.  Linear Velocity (x): 
-  
+  1.  Linear Velocity (x):<br> 
   The user is prompted to enter the linear velocity. If an invalid input is given, the program clears the error state and asks for a valid number.
   ```cpp
   std::cout << "Enter the linear velocity (x): ";
@@ -218,7 +217,8 @@ The user is then asked to input the linear and angular velocities. The program u
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   }
   ```
-  2.  Angular Velocity (z): The same process is repeated for the angular velocity input.
+  2.  Angular Velocity (z):<br>
+  The same process is repeated for the angular velocity input.
   ```cpp
   std::cout << "Enter the angular velocity (z): ";
   while (!(std::cin >> angular_z)) {
@@ -227,7 +227,7 @@ The user is then asked to input the linear and angular velocities. The program u
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   }
   ```
-  
+
 - *Error Handling Issue*
 
 During the initial implementation of the node, I faced an issue with invalid inputs for the velocities. If the user entered a non-numeric value, the program would crash or behave unexpectedly. To resolve this, I added error handling that clears the input buffer and prompts the user to re-enter valid values for both the linear and angular velocities. This makes the interface more robust and user-friendly by ensuring only valid numerical inputs are accepted.
