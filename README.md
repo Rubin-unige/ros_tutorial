@@ -163,3 +163,33 @@ This will start both the **Python user interface** for controlling the turtles a
 To stop the nodes, simply press `Ctrl+C` in the terminal where each node is running (`User Interface`, `Distance Monitor`, `Turtlesim`, or `roscore`). This will terminate the nodes and stop the simulation.
 
 ## Implementation
+### User Interface node
+- **Implementation**
+
+  - Spawning Turtle2
+In the user interface node, we use the /spawn service to create a second turtle (turtle2). The turtle is spawned at position (5.0, 2.0) in the simulation environment with an orientation of 0.0 radians. This is done during the initialization of the node and ensures that both turtles are present in the environment for interaction.
+
+  - User Interface
+The user interface is implemented to interact with the user through the terminal. It allows the user to:
+
+Choose which turtle to control (turtle1 or turtle2).
+Enter the desired linear and angular velocities for the selected turtle.
+This interactive design enables users to control either turtle dynamically by providing appropriate velocity commands.
+
+  - Publishing Velocity Commands
+After receiving user input, the node publishes the velocity commands to the respective topic (/turtle1/cmd_vel or /turtle2/cmd_vel). The turtle moves for one second based on the user-provided velocities and then stops by publishing a zero velocity. This ensures precise, controlled movement for a short duration.
+
+- **Issues**
+One issue encountered during development was with error handling in the user interface. Users might enter invalid input for the turtle name or velocities, such as non-numeric values or names other than turtle1 or turtle2. These cases caused the node to behave unexpectedly or crash.
+
+  - Solution
+To address this issue, error handling mechanisms were added to validate user input:
+
+If an invalid turtle name is entered, the user is prompted again until a valid name is provided.
+If the entered velocity values are not numeric, the input is cleared, and the user is prompted again to enter valid values.
+This approach ensures robust and user-friendly interaction in the user interface node.
+
+### Distance Monitor node
+- Implementation
+- Issues
+- Solutions
