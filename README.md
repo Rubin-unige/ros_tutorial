@@ -167,27 +167,53 @@ To stop the nodes, simply press `Ctrl+C` in the terminal where each node is runn
 - **Implementation**
 
   - Spawning Turtle2
-In the user interface node, we use the /spawn service to create a second turtle (turtle2). The turtle is spawned at position (5.0, 2.0) in the simulation environment with an orientation of 0.0 radians. This is done during the initialization of the node and ensures that both turtles are present in the environment for interaction.
+The `user_interface` node begins by spawning a second turtle named turtle2 in the simulation environment. This is accomplished using the /spawn service provided by turtlesim. The turtle is initialized at coordinates (5.0, 2.0) with an orientation of 0.0 radians. This setup ensures both turtles are present and positioned for subsequent interaction. The spawning is done automatically during the initialization phase of the node, requiring no input from the user.
 
-  - User Interface
-The user interface is implemented to interact with the user through the terminal. It allows the user to:
+```cpp
+  // Initialise service clients
+  ros::ServiceClient client_spawn = nh.serviceClient <turtlesim::Spawn> ("/spawn");
+  turtlesim::Spawn spawn_srv;
 
-Choose which turtle to control (turtle1 or turtle2).
-Enter the desired linear and angular velocities for the selected turtle.
-This interactive design enables users to control either turtle dynamically by providing appropriate velocity commands.
+  // Spawn Turtle
+  spawn_srv.request.x = 5.0;
+  spawn_srv.request.y = 2.0;
+  spawn_srv.request.theta = 0.0;
+  spawn_srv.request.name = "turtle2";
+  client_spawn.call(spawn_srv);
+```
 
-  - Publishing Velocity Commands
-After receiving user input, the node publishes the velocity commands to the respective topic (/turtle1/cmd_vel or /turtle2/cmd_vel). The turtle moves for one second based on the user-provided velocities and then stops by publishing a zero velocity. This ensures precise, controlled movement for a short duration.
+User Interface
+The core functionality of the user_interface node is to enable real-time interaction between the user and the simulation. The interface is designed to:
 
-- **Issues**
-One issue encountered during development was with error handling in the user interface. Users might enter invalid input for the turtle name or velocities, such as non-numeric values or names other than turtle1 or turtle2. These cases caused the node to behave unexpectedly or crash.
+Prompt the User:
 
-  - Solution
-To address this issue, error handling mechanisms were added to validate user input:
+Select the turtle to control (turtle1 or turtle2).
+Enter the desired linear and angular velocities.
+Process Input:
+User inputs are validated to ensure correctness. If the selected turtle name is invalid or non-numeric values are entered for velocities, the system provides appropriate error messages and prompts the user to re-enter valid data.
 
-If an invalid turtle name is entered, the user is prompted again until a valid name is provided.
-If the entered velocity values are not numeric, the input is cleared, and the user is prompted again to enter valid values.
-This approach ensures robust and user-friendly interaction in the user interface node.
+Execute Commands:
+Based on the validated input, velocity commands are published to the respective turtle’s velocity topic (/turtle1/cmd_vel or /turtle2/cmd_vel). The commands are executed for a duration of one second, after which the turtle stops by publishing a zero-velocity command. This controlled approach ensures that the turtle’s movement is predictable and precise.
+
+Publishing Velocity Commands
+The velocity commands for the turtles are represented as geometry_msgs/Twist messages. Each message specifies:
+
+Linear velocity (linear.x) to control forward/backward motion.
+Angular velocity (angular.z) to control rotation.
+By publishing these commands to the appropriate topics, the turtles respond immediately, allowing for intuitive and dynamic control.
+
+Issues and Solutions
+Issues Encountered
+Invalid Input Handling:
+Users might:
+Enter an invalid turtle name (e.g., misspell turtle1 or turtle2).
+Provide non-numeric or nonsensical values for velocities.
+Such cases previously led to crashes or unexpected behavior in the node.
+Solutions
+Enhanced Error Handling:
+Turtle Selection: If an invalid turtle name is entered, the program displays an error message and prompts the user until a valid name is provided.
+Velocity Input: If non-numeric values are entered for linear or angular velocities, the system clears the invalid input and re-prompts the user.
+These measures ensure the system remains robust and user-friendly, regardless of erroneous input. As a result, the node can gracefully handle edge cases, enhancing the user experience.
 
 ### Distance Monitor node
 - Implementation
