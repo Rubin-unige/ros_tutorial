@@ -71,27 +71,27 @@ sudo apt-get install python3
 After installation, you can proceed to cloning the repository.
 
 ### Clone the Repository
-#### Set up your ROS workspace
+#### 1. Set up your ROS workspace
 
 Create a new workspace (or use an existing one) and navigate to its `src` directory:
 ```bash
 mkdir -p ~/my_new_ws/src
 cd ~/my_new_ws/src
 ```
-#### Clone this repository
+#### 2. Clone this repository
 
 Clone the assignment repository into your workspace’s `src` folder:
 ```bash
 git clone https://github.com/Rubin-unige/assignment1_rt.git
 ```
-#### Add the Workspace to Your ROS Environment
+#### 3. Add the Workspace to Your ROS Environment
 
 To ensure that your workspace is sourced automatically every time you start a new terminal session, add it to your `.bashrc` file:
 ```bash
 echo "source ~/my_new_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-#### Build the Package
+#### 4. Build the Package
 
 Navigate to the root of your workspace and build the package using `catkin_make`:
 ```bash
@@ -120,7 +120,7 @@ This will open the Turtlesim window where the turtles (`turtle1` and `turtle2`) 
 
 At this point, you can proceed to run either the **C++** or **Python** version of the `User Interface` and `Distance Monitor` nodes, depending on which implementation you want to use. The nodes can be run individually or in combination, offering flexibility in how you choose to execute them.
 
-**Running the C++ Version**
+##### Running the C++ Version
 ---
 To run the C++ nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
@@ -135,7 +135,7 @@ rosrun assignment1_rt distance_monitor
 ```
 This will start both the **C++ user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
-**Running the Python**
+##### Running the Python
 ---
 To run the Python nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
@@ -158,7 +158,7 @@ rosrun assignment1_rt distance_monitor.py
 ```
 This will start both the **Python user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
-**Alternative Configurations**
+##### Alternative Configurations
 
 The program is flexible, allowing you to mix and match the **C++** and **Python** nodes based on your preference. For example, you can run the `C++ User Interface` node while running the `Python Distance Monitor` node, or vice versa. This allows you to run the system in the configuration that best suits your workflow and testing needs.
 
