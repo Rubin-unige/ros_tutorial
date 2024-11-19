@@ -158,7 +158,7 @@ rosrun assignment1_rt distance_monitor.py
 ```
 This will start both the **Python user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
-`*Alternative Configurations*`
+### Alternative Configurations
 The program is flexible, allowing you to mix and match the **C++** and **Python** nodes based on your preference. For example, you can run the `C++ User Interface` node while running the `Python Distance Monitor` node, or vice versa. This allows you to run the system in the configuration that best suits your workflow and testing needs.
 
 4. **Stopping the nodes**
