@@ -203,7 +203,7 @@ Below is the code that sets up the spawn request:
 
 The user interface of the `user_interface` node allows the user to control either `turtle1` or `turtle2` by setting their velocities.
 
-##### 1. Selecting the Turtle
+#### 1. Selecting the Turtle
 
 The user is prompted to select a turtle (either `turtle1` or `turtle2`). If an invalid input is provided, the program will re-prompt the user until a valid turtle name is entered
 
@@ -215,7 +215,7 @@ if (turtle_name != "turtle1" && turtle_name != "turtle2") {
   continue;
 }
 ```
-##### 2. Setting Velocities
+#### 2. Setting Velocities
 
 After selecting a turtle, the user is asked to enter the linear and angular velocities. Error handling ensures only valid numeric inputs are accepted.
 
@@ -240,7 +240,7 @@ After selecting a turtle, the user is asked to enter the linear and angular velo
   }
   ```
 
-##### Error Handling Issue
+#### Error Handling Issue
 
 During the initial implementation of the node, I faced an issue with invalid inputs for the velocities. If the user entered a non-numeric value, the program would crash or behave unexpectedly. To resolve this, I added error handling that clears the input buffer and prompts the user to re-enter valid values for both the linear and angular velocities. 
 
@@ -250,7 +250,7 @@ Once the user has selected the turtle and entered the linear and angular velocit
 
 The following steps are taken to publish the user inputs:
 
-##### 1. Turtle Selection:<br>
+#### 1. Turtle Selection:<br>
   After the user selects the turtle, the node checks which turtle was selected and publishes the corresponding velocity commands to the respective topic.
   - `turtle1` uses the topic `/turtle1/cmd_vel`.
   - `turtle2` uses the topic `/turtle2/cmd_vel`.
@@ -258,7 +258,7 @@ The following steps are taken to publish the user inputs:
   ros::Publisher pub_turtle1 = nh.advertise <geometry_msgs::Twist>("/turtle1/cmd_vel", 10);
   ros::Publisher pub_turtle2 = nh.advertise <geometry_msgs::Twist>("/turtle2/cmd_vel", 10);
 ```
-##### 2. Publishing the Velocity Command:<br>
+#### 2. Publishing the Velocity Command:<br>
   A `geometry_msgs::Twist` message is created, which holds the linear and angular velocities. This message is then published to the appropriate topic using the publisher.
 
 Below is the code for publishing the velocities:
@@ -282,7 +282,7 @@ Below is the code for publishing the velocities:
       pub_turtle2.publish(turtle_vel); 
   } 
 ```
-##### Explanation of the Code:
+#### Explanation of the Code:
   - `geometry_msgs::Twist turtle_vel;`: This message holds the velocity commands for the turtle. The `linear.x` field holds the linear velocity, and `angular.z` holds the angular velocity.
   - `turtle_vel.linear.x = linear_x;` and `turtle_vel.angular.z = angular_z;`: These lines set the user-defined velocities for linear and angular movement.
   - `pub_turtle1.publish(turtle_vel);` and `pub_turtle2.publish(turtle_vel);`: Depending on the selected turtle, the program publishes the velocity message to the appropriate topic (`/turtle1/cmd_vel` or `/turtle2/cmd_vel`).
