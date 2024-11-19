@@ -120,7 +120,7 @@ This will open the Turtlesim window where the turtles (`turtle1` and `turtle2`) 
 
 At this point, you can proceed to run either the **C++** or **Python** version of the `User Interface` and `Distance Monitor` nodes, depending on which implementation you want to use. The nodes can be run individually or in combination, offering flexibility in how you choose to execute them.
 
-##### Running the C++ Version
+#### Running the C++ Version
 ---
 To run the C++ nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
@@ -135,7 +135,7 @@ rosrun assignment1_rt distance_monitor
 ```
 This will start both the **C++ user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
-##### Running the Python
+#### Running the Python
 ---
 To run the Python nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
@@ -158,11 +158,12 @@ rosrun assignment1_rt distance_monitor.py
 ```
 This will start both the **Python user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
-##### Alternative Configurations
+#### Alternative Configurations
+---
 
 The program is flexible, allowing you to mix and match the **C++** and **Python** nodes based on your preference. For example, you can run the `C++ User Interface` node while running the `Python Distance Monitor` node, or vice versa. This allows you to run the system in the configuration that best suits your workflow and testing needs.
 
-4. **Stopping the nodes**
+#### Stopping the nodes
 
 To stop the nodes, simply press `Ctrl+C` in the terminal where each node is running (`User Interface`, `Distance Monitor`, `Turtlesim`, or `roscore`). This will terminate the nodes and stop the simulation.
 
