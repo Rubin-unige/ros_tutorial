@@ -164,16 +164,22 @@ To stop the nodes, simply press `Ctrl+C` in the terminal where each node is runn
 
 ## Implementation
 ### User Interface node
-- **Implementation**
+**Implementation**
+---
+**Spawning Turtle2**
 
-  - Spawning Turtle2
-The `user_interface` node begins by spawning a second turtle named turtle2 in the simulation environment. This is accomplished using the /spawn service provided by turtlesim. The turtle is initialized at coordinates (5.0, 2.0) with an orientation of 0.0 radians. This setup ensures both turtles are present and positioned for subsequent interaction. The spawning is done automatically during the initialization phase of the node, requiring no input from the user.
+The `user_interface` node automatically spawns a second turtle, `turtle2`, in the simulation when the program starts. This is accomplished using the `/spawn` service provided by `turtlesim`, which allows for creating a new turtle at a specified position and orientation in the simulation environment.
 
+In this implementation:
+
+- `turtle2` is spawned at coordinates **(5.0, 2.0)** with an orientation of **0.0** radians, positioning it to face directly to the right.
+- The `/spawn` service is invoked during the initialization phase of the node, ensuring `turtle2` is added automatically without requiring user input.
+
+The relevant parameters and their values are specified as part of the service request, as shown below:
 ```cpp
   // Initialise service clients
   ros::ServiceClient client_spawn = nh.serviceClient <turtlesim::Spawn> ("/spawn");
   turtlesim::Spawn spawn_srv;
-
   // Spawn Turtle
   spawn_srv.request.x = 5.0;
   spawn_srv.request.y = 2.0;
@@ -182,7 +188,8 @@ The `user_interface` node begins by spawning a second turtle named turtle2 in th
   client_spawn.call(spawn_srv);
 ```
 
-User Interface
+**User Interface**
+
 The core functionality of the user_interface node is to enable real-time interaction between the user and the simulation. The interface is designed to:
 
 Prompt the User:
