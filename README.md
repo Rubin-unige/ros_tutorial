@@ -164,8 +164,8 @@ To stop the nodes, simply press `Ctrl+C` in the terminal where each node is runn
 
 ## Implementation
 ### User Interface node
-**Implementation**
-- **Spawning Turtle2**
+
+**Spawning Turtle2**
 
 The `user_interface` node automatically spawns a second turtle, `turtle2`, in the simulation when the program starts. This is accomplished using the `/spawn` service provided by `turtlesim`, which allows for creating a new turtle at a specified position and orientation in the simulation environment.
 
@@ -187,41 +187,41 @@ The relevant parameters and their values are specified as part of the service re
   client_spawn.call(spawn_srv);
 ```
 
-- **User Interface**
+**User Interface**
 
-The core functionality of the user_interface node is to enable real-time interaction between the user and the simulation. The interface is designed to:
+The user interface of the `user_interface` node allows the user to control either `turtle1` or `turtle2` by setting their velocities.
 
-Prompt the User:
+- Selecting the Turtle
+The user is prompted to select a turtle (either `turtle1` or `turtle2`). If an invalid input is provided, the program will ask the user to enter a valid turtle name.
 
-Select the turtle to control (turtle1 or turtle2).
-Enter the desired linear and angular velocities.
-Process Input:
-User inputs are validated to ensure correctness. If the selected turtle name is invalid or non-numeric values are entered for velocities, the system provides appropriate error messages and prompts the user to re-enter valid data.
+```cpp
+std::cout << "Enter the turtle you want to control (turtle1 or turtle2): ";
+std::cin >> turtle_name;
+if (turtle_name != "turtle1" && turtle_name != "turtle2") {
+  std::cout << "Invalid turtle name. Please enter 'turtle1' or 'turtle2'.\n";
+  continue;
+}
+```
+- Setting Velocities
+The user is then asked to input the linear and angular velocities. The program uses error handling to ensure only valid numerical values are entered.
 
-Execute Commands:
-Based on the validated input, velocity commands are published to the respective turtle’s velocity topic (/turtle1/cmd_vel or /turtle2/cmd_vel). The commands are executed for a duration of one second, after which the turtle stops by publishing a zero-velocity command. This controlled approach ensures that the turtle’s movement is predictable and precise.
-
-Publishing Velocity Commands
-The velocity commands for the turtles are represented as geometry_msgs/Twist messages. Each message specifies:
-
-Linear velocity (linear.x) to control forward/backward motion.
-Angular velocity (angular.z) to control rotation.
-By publishing these commands to the appropriate topics, the turtles respond immediately, allowing for intuitive and dynamic control.
-
-Issues and Solutions
-Issues Encountered
-Invalid Input Handling:
-Users might:
-Enter an invalid turtle name (e.g., misspell turtle1 or turtle2).
-Provide non-numeric or nonsensical values for velocities.
-Such cases previously led to crashes or unexpected behavior in the node.
-Solutions
-Enhanced Error Handling:
-Turtle Selection: If an invalid turtle name is entered, the program displays an error message and prompts the user until a valid name is provided.
-Velocity Input: If non-numeric values are entered for linear or angular velocities, the system clears the invalid input and re-prompts the user.
-These measures ensure the system remains robust and user-friendly, regardless of erroneous input. As a result, the node can gracefully handle edge cases, enhancing the user experience.
-
-### Distance Monitor node
-- Implementation
-- Issues
-- Solutions
+  1.  Linear Velocity (x): The user is prompted to enter the linear velocity. If an invalid input is given, the program clears the error state and asks for a valid number.
+```cpp
+std::cout << "Enter the linear velocity (x): ";
+while (!(std::cin >> linear_x)) {
+  std::cout << "Invalid input. Please enter a valid number for linear velocity: ";
+  std::cin.clear();  
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+```
+  2.  Angular Velocity (z): The same process is repeated for the angular velocity input.
+```cpp
+std::cout << "Enter the angular velocity (z): ";
+while (!(std::cin >> angular_z)) {
+  std::cout << "Invalid input. Please enter a valid number for angular velocity: ";
+  std::cin.clear();
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+```
+- Error Handling Issue
+During the initial implementation of the node, I faced an issue with invalid inputs for the velocities. If the user entered a non-numeric value, the program would crash or behave unexpectedly. To resolve this, I added error handling that clears the input buffer and prompts the user to re-enter valid values for both the linear and angular velocities. This makes the interface more robust and user-friendly by ensuring only valid numerical inputs are accepted.
