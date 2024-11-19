@@ -165,8 +165,7 @@ To stop the nodes, simply press `Ctrl+C` in the terminal where each node is runn
 ## Implementation
 ### User Interface node
 **Implementation**
----
-**Spawning Turtle2**
+- **Spawning Turtle2**
 
 The `user_interface` node automatically spawns a second turtle, `turtle2`, in the simulation when the program starts. This is accomplished using the `/spawn` service provided by `turtlesim`, which allows for creating a new turtle at a specified position and orientation in the simulation environment.
 
@@ -188,7 +187,7 @@ The relevant parameters and their values are specified as part of the service re
   client_spawn.call(spawn_srv);
 ```
 
-**User Interface**
+- **User Interface**
 
 The core functionality of the user_interface node is to enable real-time interaction between the user and the simulation. The interface is designed to:
 
