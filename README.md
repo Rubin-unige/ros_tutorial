@@ -230,4 +230,4 @@ The user is then asked to input the linear and angular velocities. The program u
 
 - *Error Handling Issue*
 
-During the initial implementation of the node, I faced an issue with invalid inputs for the velocities. If the user entered a non-numeric value, the program would crash or behave unexpectedly. To resolve this, I added error handling that clears the input buffer and prompts the user to re-enter valid values for both the linear and angular velocities. This makes the interface more robust and user-friendly by ensuring only valid numerical inputs are accepted.
+During the initial implementation of the node, I faced an issue with invalid inputs for the velocities. If the user entered a non-numeric value, the program would crash or behave unexpectedly. To resolve this, I added error handling that clears the input buffer and prompts the user to re-enter valid values for both the linear and angular velocities. 
