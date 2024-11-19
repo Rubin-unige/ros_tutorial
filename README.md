@@ -219,7 +219,7 @@ if (turtle_name != "turtle1" && turtle_name != "turtle2") {
 
 After selecting a turtle, the user is asked to enter the linear and angular velocities. Error handling ensures only valid numeric inputs are accepted.
 
-  1.  Linear Velocity (x):<br> 
+  - Linear Velocity (x):<br> 
   The user is prompted for the linear velocity. If the input is invalid, the program clears the error state and asks the user to re-enter a valid value.
   ```cpp
   std::cout << "Enter the linear velocity (x): ";
@@ -229,7 +229,7 @@ After selecting a turtle, the user is asked to enter the linear and angular velo
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   }
   ```
-  2.  Angular Velocity (z):<br>
+  - Angular Velocity (z):<br>
   The same process is repeated for the angular velocity input.
   ```cpp
   std::cout << "Enter the angular velocity (z): ";
