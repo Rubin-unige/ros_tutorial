@@ -162,9 +162,16 @@ This will start both the **Python user interface** for controlling the turtles a
 
 To stop the nodes, simply press `Ctrl+C` in the terminal where each node is running (`User Interface`, `Distance Monitor`, `Turtlesim`, or `roscore`). This will terminate the nodes and stop the simulation.
 
-## Implementation
+## Implementation Details
+
 ### User Interface node
----
+
+The structure of the `user_interface` node is similar in both C++ and Python. The logic for handling user inputs, setting velocities, and publishing commands is nearly identical in both languages. Since the logic for both versions is fundamentally the same, I will explain the details using the C++ version as an example.
+
+However, there was one key difference when running the node in Python: if the user closed the node and opened it again, `turtle2` would already exist in the simulation, causing a conflict. This issue did not occur in the C++ implementation, where if `turtle2` already existed, the node would simply display a message saying "turtle2 already exists" and take the position from the already existing turtle.
+
+In the Python version, when the node is restarted, attempting to spawn `turtle2` again would cause the node to crash because `turtle2` already existed in the simulation. To address this, additional checks were implemented to ensure that `turtle2` is only spawned if it doesn't already exist. This solution is explained below in separate section.
+
 **Spawning Turtle2**
 
 The `user_interface` node automatically spawns a second turtle, `turtle2`, in the simulation when the program starts. This is accomplished using the `/spawn` service provided by `turtlesim`, which allows for creating a new turtle at a specified position and orientation in the simulation environment.
@@ -186,7 +193,7 @@ Below is the code that sets up the spawn request:
   spawn_srv.request.name = "turtle2";
   client_spawn.call(spawn_srv);
 ```
----
+
 **User Interface**
 
 The user interface of the `user_interface` node allows the user to control either `turtle1` or `turtle2` by setting their velocities.
@@ -231,7 +238,7 @@ After selecting a turtle, the user is asked to enter the linear and angular velo
 - *Error Handling Issue*
 
 During the initial implementation of the node, I faced an issue with invalid inputs for the velocities. If the user entered a non-numeric value, the program would crash or behave unexpectedly. To resolve this, I added error handling that clears the input buffer and prompts the user to re-enter valid values for both the linear and angular velocities. 
----
+
 **Publishing User Input**
 
 Once the user has selected the turtle and entered the linear and angular velocities, the `user_interface` node publishes these commands to the respective turtle's velocity topic. 
