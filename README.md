@@ -16,7 +16,7 @@ This assignment was completed using both **Python** and **C++**.
 Below are details about each node and its functionality.<br>
 
 ## Node Details
-### User Interface Node (`user_interface`)
+### 1. User Interface Node (user_interface)
 
 This node is responsible for handling user input and controlling the movements of two turtles (`turtle1` and `turtle2`) in the simulator. Its key functions include:<br>
 
@@ -26,7 +26,7 @@ This node is responsible for handling user input and controlling the movements o
    -  Set the selected turtle's linear and angular velocities.
 -  Sends movement commands to the selected turtle, causing it to move for one second. After the movement, the turtle stops, and the interface is ready to accept the next command.
 
-### Distance Monitor Node (`distance_monitor`)
+### 2. Distance Monitor Node (distance_monitor)
 
 This node ensures that the turtles maintain safe distances from each other and stay within the boundaries of the simulation environment. This node continuously calculates and monitors turtle positions. Its key features are:<br>
 
