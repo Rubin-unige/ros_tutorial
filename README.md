@@ -178,7 +178,7 @@ However, there was one key difference when running the node in Python: if the us
 In the Python version, when the node is restarted, attempting to spawn `turtle2` again would cause the node to crash because `turtle2` already existed in the simulation. To address this, additional checks were implemented to ensure that `turtle2` is only spawned if it doesn't already exist. This solution is explained below in separate section.
 
 #### Spawning Turtle2
-
+---
 The `user_interface` node automatically spawns a second turtle, `turtle2`, in the simulation when the program starts. This is accomplished using the `/spawn` service provided by `turtlesim`, which allows for creating a new turtle at a specified position and orientation in the simulation environment.
 
 In this implementation:
@@ -200,7 +200,7 @@ Below is the code that sets up the spawn request:
 ```
 
 #### User Interface
-
+---
 The user interface of the `user_interface` node allows the user to control either `turtle1` or `turtle2` by setting their velocities.
 
 #### 1. Selecting the Turtle
@@ -245,7 +245,7 @@ After selecting a turtle, the user is asked to enter the linear and angular velo
 During the initial implementation of the node, I faced an issue with invalid inputs for the velocities. If the user entered a non-numeric value, the program would crash or behave unexpectedly. To resolve this, I added error handling that clears the input buffer and prompts the user to re-enter valid values for both the linear and angular velocities. 
 
 #### Publishing User Input
-
+---
 Once the user has selected the turtle and entered the linear and angular velocities, the `user_interface` node publishes these commands to the respective turtle's velocity topic. 
 
 The following steps are taken to publish the user inputs:
