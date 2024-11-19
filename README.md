@@ -191,7 +191,8 @@ The relevant parameters and their values are specified as part of the service re
 
 The user interface of the `user_interface` node allows the user to control either `turtle1` or `turtle2` by setting their velocities.
 
-- Selecting the Turtle
+- *Selecting the Turtle*
+
 The user is prompted to select a turtle (either `turtle1` or `turtle2`). If an invalid input is provided, the program will ask the user to enter a valid turtle name.
 
 ```cpp
@@ -202,26 +203,31 @@ if (turtle_name != "turtle1" && turtle_name != "turtle2") {
   continue;
 }
 ```
-- Setting Velocities
+- *Setting Velocities*
+
 The user is then asked to input the linear and angular velocities. The program uses error handling to ensure only valid numerical values are entered.
 
-  1.  Linear Velocity (x): The user is prompted to enter the linear velocity. If an invalid input is given, the program clears the error state and asks for a valid number.
-```cpp
-std::cout << "Enter the linear velocity (x): ";
-while (!(std::cin >> linear_x)) {
-  std::cout << "Invalid input. Please enter a valid number for linear velocity: ";
-  std::cin.clear();  
-  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
-```
+  1.  Linear Velocity (x): 
+  
+  The user is prompted to enter the linear velocity. If an invalid input is given, the program clears the error state and asks for a valid number.
+  ```cpp
+  std::cout << "Enter the linear velocity (x): ";
+  while (!(std::cin >> linear_x)) {
+    std::cout << "Invalid input. Please enter a valid number for linear velocity: ";
+    std::cin.clear();  
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  }
+  ```
   2.  Angular Velocity (z): The same process is repeated for the angular velocity input.
-```cpp
-std::cout << "Enter the angular velocity (z): ";
-while (!(std::cin >> angular_z)) {
-  std::cout << "Invalid input. Please enter a valid number for angular velocity: ";
-  std::cin.clear();
-  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
-```
-- Error Handling Issue
+  ```cpp
+  std::cout << "Enter the angular velocity (z): ";
+  while (!(std::cin >> angular_z)) {
+    std::cout << "Invalid input. Please enter a valid number for angular velocity: ";
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  }
+  ```
+  
+- *Error Handling Issue*
+
 During the initial implementation of the node, I faced an issue with invalid inputs for the velocities. If the user entered a non-numeric value, the program would crash or behave unexpectedly. To resolve this, I added error handling that clears the input buffer and prompts the user to re-enter valid values for both the linear and angular velocities. This makes the interface more robust and user-friendly by ensuring only valid numerical inputs are accepted.
