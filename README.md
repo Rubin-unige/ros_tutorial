@@ -118,7 +118,7 @@ This will open the Turtlesim window where the turtles (`turtle1` and `turtle2`) 
 
 3. **Run the User Interface and Distance Monitor Nodes**
 
-At this point, you can proceed to run either the **C++** or **Python** version of the `User Interface` and `Distance Monitor` nodes, depending on which implementation you want to use.
+At this point, you can proceed to run either the **C++** or **Python** version of the `User Interface` and `Distance Monitor` nodes, depending on which implementation you want to use. The nodes can be run individually or in combination, offering flexibility in how you choose to execute them.
 
 ### Running the C++ Version
 ---
@@ -157,6 +157,9 @@ rosrun assignment1_rt user_interface.py
 rosrun assignment1_rt distance_monitor.py
 ```
 This will start both the **Python user interface** for controlling the turtles and the **distance monitor** to track their movements.
+
+`*Alternative Configurations*`
+The program is flexible, allowing you to mix and match the **C++** and **Python** nodes based on your preference. For example, you can run the `C++ User Interface` node while running the `Python Distance Monitor` node, or vice versa. This allows you to run the system in the configuration that best suits your workflow and testing needs.
 
 4. **Stopping the nodes**
 
