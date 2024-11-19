@@ -16,7 +16,7 @@ This assignment was completed using both **Python** and **C++**.
 Below are details about each node and its functionality.<br>
 
 ## Node Details
-1. **User Interface Node** (`user_interface`)
+### User Interface Node (`user_interface`)
 
 This node is responsible for handling user input and controlling the movements of two turtles (`turtle1` and `turtle2`) in the simulator. Its key functions include:<br>
 
@@ -26,7 +26,7 @@ This node is responsible for handling user input and controlling the movements o
    -  Set the selected turtle's linear and angular velocities.
 -  Sends movement commands to the selected turtle, causing it to move for one second. After the movement, the turtle stops, and the interface is ready to accept the next command.
 
-2. **Distance Monitor Node** (`distance_monitor`)
+### Distance Monitor Node (`distance_monitor`)
 
 This node ensures that the turtles maintain safe distances from each other and stay within the boundaries of the simulation environment. This node continuously calculates and monitors turtle positions. Its key features are:<br>
 
@@ -71,27 +71,27 @@ sudo apt-get install python3
 After installation, you can proceed to cloning the repository.
 
 ### Clone the Repository
-1. **Set up your ROS workspace**
+#### Set up your ROS workspace
 
 Create a new workspace (or use an existing one) and navigate to its `src` directory:
 ```bash
 mkdir -p ~/my_new_ws/src
 cd ~/my_new_ws/src
 ```
-2. **Clone this repository**
+#### Clone this repository
 
 Clone the assignment repository into your workspace’s `src` folder:
 ```bash
 git clone https://github.com/Rubin-unige/assignment1_rt.git
 ```
-3. **Add the Workspace to Your ROS Environment**
+#### Add the Workspace to Your ROS Environment
 
 To ensure that your workspace is sourced automatically every time you start a new terminal session, add it to your `.bashrc` file:
 ```bash
 echo "source ~/my_new_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-4. **Build the Package**
+#### Build the Package
 
 Navigate to the root of your workspace and build the package using `catkin_make`:
 ```bash
@@ -102,13 +102,13 @@ After building, your workspace will be ready to launch the nodes in the package.
 
 ## Launch Simulation and Nodes
 
-1. **Start the ROS Master**
+#### 1. Start the ROS Master
 
 Before running any ROS nodes, make sure the ROS Master is up and running. Open a terminal and start `roscore`:
 ```bash
 roscore
 ```
-2. **Run the Turtlesim Node**
+#### 2. Run the Turtlesim Node
 
 Next, start the `Turtlesim` node in a new terminal to launch the simulation environment:
 ```bash
@@ -116,11 +116,11 @@ rosrun turtlesim turtlesim_node
 ```
 This will open the Turtlesim window where the turtles (`turtle1` and `turtle2`) will appear.
 
-3. **Run the User Interface and Distance Monitor Nodes**
+#### 3. Run the User Interface and Distance Monitor Nodes
 
 At this point, you can proceed to run either the **C++** or **Python** version of the `User Interface` and `Distance Monitor` nodes, depending on which implementation you want to use. The nodes can be run individually or in combination, offering flexibility in how you choose to execute them.
 
-#### Running the C++ Version
+**Running the C++ Version**
 ---
 To run the C++ nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
@@ -135,7 +135,7 @@ rosrun assignment1_rt distance_monitor
 ```
 This will start both the **C++ user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
-#### Running the Python
+**Running the Python**
 ---
 To run the Python nodes, follow these steps:
 - Make sure that the `roscore` and `turtlesim` nodes are running.
@@ -158,7 +158,8 @@ rosrun assignment1_rt distance_monitor.py
 ```
 This will start both the **Python user interface** for controlling the turtles and the **distance monitor** to track their movements.
 
-#### Alternative Configurations
+**Alternative Configurations**
+
 The program is flexible, allowing you to mix and match the **C++** and **Python** nodes based on your preference. For example, you can run the `C++ User Interface` node while running the `Python Distance Monitor` node, or vice versa. This allows you to run the system in the configuration that best suits your workflow and testing needs.
 
 4. **Stopping the nodes**
@@ -175,7 +176,7 @@ However, there was one key difference when running the node in Python: if the us
 
 In the Python version, when the node is restarted, attempting to spawn `turtle2` again would cause the node to crash because `turtle2` already existed in the simulation. To address this, additional checks were implemented to ensure that `turtle2` is only spawned if it doesn't already exist. This solution is explained below in separate section.
 
-**Spawning Turtle2**
+#### Spawning Turtle2
 
 The `user_interface` node automatically spawns a second turtle, `turtle2`, in the simulation when the program starts. This is accomplished using the `/spawn` service provided by `turtlesim`, which allows for creating a new turtle at a specified position and orientation in the simulation environment.
 
@@ -197,7 +198,7 @@ Below is the code that sets up the spawn request:
   client_spawn.call(spawn_srv);
 ```
 
-**User Interface**
+#### User Interface
 
 The user interface of the `user_interface` node allows the user to control either `turtle1` or `turtle2` by setting their velocities.
 
@@ -242,7 +243,7 @@ After selecting a turtle, the user is asked to enter the linear and angular velo
 
 During the initial implementation of the node, I faced an issue with invalid inputs for the velocities. If the user entered a non-numeric value, the program would crash or behave unexpectedly. To resolve this, I added error handling that clears the input buffer and prompts the user to re-enter valid values for both the linear and angular velocities. 
 
-**Publishing User Input**
+#### Publishing User Input
 
 Once the user has selected the turtle and entered the linear and angular velocities, the `user_interface` node publishes these commands to the respective turtle's velocity topic. 
 
@@ -284,7 +285,9 @@ Below is the code for publishing the velocities:
   - `geometry_msgs::Twist turtle_vel;`: This message holds the velocity commands for the turtle. The `linear.x` field holds the linear velocity, and `angular.z` holds the angular velocity.
   - `turtle_vel.linear.x = linear_x;` and `turtle_vel.angular.z = angular_z;`: These lines set the user-defined velocities for linear and angular movement.
   - `pub_turtle1.publish(turtle_vel);` and `pub_turtle2.publish(turtle_vel);`: Depending on the selected turtle, the program publishes the velocity message to the appropriate topic (`/turtle1/cmd_vel` or `/turtle2/cmd_vel`).
-  - `ros::Duration(1.0).sleep();`: This command pauses the program for 1 second, allowing the turtle to move.
-  - **Stopping the Turtle**: After 1 second, the velocities are set to 0 (both linear and angular) to stop the turtle, and the stop command is published to the respective turtle.
+  - `ros::Duration(1.0).sleep();`: This command pauses the program for 1 second, allowing the turtle to move. 
+  `ros::Duration(1.0).sleep()` is used instead of `sleep(1.0)` because it is specifically designed for ROS nodes, ensuring proper synchronization with the ROS event loop and preventing any timing issues.
 
-`ros::Duration(1.0).sleep()` is used instead of `sleep(1.0)` because it is specifically designed for ROS nodes, ensuring proper synchronization with the ROS event loop and preventing any timing issues.
+#### Stopping the Turtle
+After 1 second, the velocities are set to 0 (both linear and angular) to stop the turtle, and the stop command is published to the respective turtle.
+
