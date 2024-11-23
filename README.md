@@ -3,7 +3,7 @@ This repository contains the assignment work for the **Research Track** course, 
 **Rubin Khadka Chhetri**  
 **ID: 6558048**
 
-# Table of Contents
+## Table of Contents
 - [Introduction](#introduction)
 - [Node Details](#node-details)
 - [Repository Structure](#repository-structure)
