@@ -100,7 +100,7 @@ catkin_make
 ```
 After building, your workspace will be ready to launch the nodes in the package.
 
-## Launch Simulation and Nodes
+## Launching Simulation and Nodes
 
 #### 1. Start the ROS Master
 
@@ -168,8 +168,6 @@ The program is flexible, allowing you to mix and match the **C++** and **Python*
 To stop the nodes, simply press `Ctrl+C` in the terminal where each node is running (`User Interface`, `Distance Monitor`, `Turtlesim`, or `roscore`). This will terminate the nodes and stop the simulation.
 
 ## Implementation Details
-
----
 
 ### User Interface Node
 
@@ -294,6 +292,35 @@ Below is the code for publishing the velocities:
 #### 3. Stopping the Turtle
 After 1 second, the velocities are set to 0 (both linear and angular) to stop the turtle, and the stop command is published to the respective turtle.
 
+### 4. Python `turtle2` already exist issue
+As discussed earlier, when restarting the `user_interface` node in Python, the node crashed because `turtle2` already existed in the simulation. This issue did not occur in the C++ version.
+
+To address this problem in Python, an additional check was implemented to determine if `turtle2` already exists in the simulation before attempting to spawn it. This check uses the `/turtle2/pose topic`, which is published when `turtle2` exists in the simulation. By subscribing to this topic, the node can confirm whether `turtle2` is already present. If it is, the node skips the spawn attempt. If not, it proceeds with spawning `turtle2` using the `/spawn` service.
+
+Solution Details:
+Check for Existing turtle2:
+The node subscribes to the /turtle2/pose topic, which publishes the position and orientation of turtle2. If a message is received from this topic, it confirms that turtle2 exists in the simulation. No further action is taken to spawn it.
+
+Spawn turtle2 if Not Found:
+If no message is received within a 1-second timeout, the node assumes that turtle2 does not exist and proceeds to spawn it at the specified coordinates (5.0, 2.0) and orientation (0.0).
+
+This check ensures the node behaves correctly upon restarts, preventing redundant spawning attempts and avoiding crashes.
+```Python
+def check_if_turtle2_exists():
+
+    ## Checks if turtle2 exists by subscribing to /turtle2/pose.
+    turtle2_exists = False
+    def pose_callback(msg):
+        nonlocal turtle2_exists
+        turtle2_exists = True  # Message received; turtle2 exists
+    # Subscribe to /turtle2/pose topic
+    rospy.Subscriber('/turtle2/pose', Pose, pose_callback)
+    # Short delay , wait message
+    timeout_time = rospy.Time.now() + rospy.Duration(1.0)  # 1-second timeout
+    while rospy.Time.now() < timeout_time and not rospy.is_shutdown():
+        rospy.sleep(0.1)  # Sleep in small increments
+    return turtle2_exists
+```
 
 ---
 ### Distance Monitor Node
