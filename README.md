@@ -295,19 +295,18 @@ After 1 second, the velocities are set to 0 (both linear and angular) to stop th
 ### 4. Python `turtle2` already exist issue
 As discussed earlier, when restarting the `user_interface` node in Python, the node crashed because `turtle2` already existed in the simulation. This issue did not occur in the C++ version.
 
-To address this problem in Python, an additional check was implemented to determine if `turtle2` already exists in the simulation before attempting to spawn it. This check uses the `/turtle2/pose topic`, which is published when `turtle2` exists in the simulation. By subscribing to this topic, the node can confirm whether `turtle2` is already present. If it is, the node skips the spawn attempt. If not, it proceeds with spawning `turtle2` using the `/spawn` service.
+To address this problem in Python, an additional check was implemented to ensure that turtle2 already exists in the simulation before attempting to spawn it. This check uses the /turtle2/pose topic, which is only active when turtle2 is present. The solution involves the following steps:
 
-Solution Details:
-Check for Existing turtle2:
-The node subscribes to the /turtle2/pose topic, which publishes the position and orientation of turtle2. If a message is received from this topic, it confirms that turtle2 exists in the simulation. No further action is taken to spawn it.
+- Check if turtle2 Exists:
 
-Spawn turtle2 if Not Found:
-If no message is received within a 1-second timeout, the node assumes that turtle2 does not exist and proceeds to spawn it at the specified coordinates (5.0, 2.0) and orientation (0.0).
+  - Subscribe to the /turtle2/pose topic, which publishes the position and orientation of turtle2.
+  - If a message is received within a 1-second timeout, it confirms that turtle2 already exists in the simulation, and no further action is needed.
+- Spawn turtle2 if Not Found:
 
-This check ensures the node behaves correctly upon restarts, preventing redundant spawning attempts and avoiding crashes.
+  - If no message is received within the timeout, the node assumes that turtle2 does not exist.
+  - The node then calls the /spawn service to create turtle2 at the coordinates (5.0, 2.0) with an orientation of 0.0.
 ```Python
 def check_if_turtle2_exists():
-
     ## Checks if turtle2 exists by subscribing to /turtle2/pose.
     turtle2_exists = False
     def pose_callback(msg):
@@ -321,6 +320,5 @@ def check_if_turtle2_exists():
         rospy.sleep(0.1)  # Sleep in small increments
     return turtle2_exists
 ```
-
 ---
 ### Distance Monitor Node
