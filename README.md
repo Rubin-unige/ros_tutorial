@@ -364,8 +364,8 @@ distance = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 $$
 
 Where:
-- $\( (x_1, y_1) \)$ are the coordinates of turtle1,
-- $\( (x_2, y_2) \)$ are the coordinates of turtle2.
+- $\ (x_1, y_1) \$ are the coordinates of turtle1,
+- $\ (x_2, y_2) \$ are the coordinates of turtle2.
 
 This calculation helps in monitoring whether the turtles are too close to each other, based on the **distance_threshold**.
 ```cpp
