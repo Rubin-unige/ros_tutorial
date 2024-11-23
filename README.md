@@ -6,7 +6,6 @@ This repository contains the assignment work for the **Research Track** course, 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Node Details](#node-details)
-  - 
 - [Repository Structure](#repository-structure)
 - [Getting Started (Read Before Action)](#getting-started-read-before-action)
   - [Prerequisites](#prerequisites)
@@ -14,6 +13,7 @@ This repository contains the assignment work for the **Research Track** course, 
 - [Launching Simulation and Nodes](#launching-simulation-and-nodes)
 - [Implementation Details](#implementation-details)
   - [User Interface Node](#user-interface-node)
+  - [Distance Monitor Node](#distance-monitor-node)
 
 ## Introduction
 This repository implements a ROS package containing two main nodes: 
