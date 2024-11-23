@@ -3,6 +3,14 @@ This repository contains the assignment work for the **Research Track** course, 
 **Rubin Khadka Chhetri**  
 **ID: 6558048**
 
+## Readme Content
+### Introduction
+### Node Details
+### Repository Structure
+### Getting Started (Read Before Action)
+### Launching Simulation and Nodes
+### Implementation Details
+
 ## Introduction
 This repository implements a ROS package containing two main nodes: 
 
@@ -11,9 +19,7 @@ This repository implements a ROS package containing two main nodes:
 
 These nodes work together within the **`turtlesim`** simulation environment to create a simple, interactive system for controlling and monitoring two turtles.
 
-This assignment was completed using both **Python** and **C++**.
-
-Below are details about each node and its functionality.<br>
+**Note**: This assignment was completed using both **Python** and **C++**. 
 
 ## Node Details
 ### 1. User Interface Node (user_interface)
