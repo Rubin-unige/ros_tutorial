@@ -6,10 +6,14 @@ This repository contains the assignment work for the **Research Track** course, 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Node Details](#node-details)
+  - 
 - [Repository Structure](#repository-structure)
 - [Getting Started (Read Before Action)](#getting-started-read-before-action)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
 - [Launching Simulation and Nodes](#launching-simulation-and-nodes)
 - [Implementation Details](#implementation-details)
+  - [User Interface Node](#user-interface-node)
 
 ## Introduction
 This repository implements a ROS package containing two main nodes: 
@@ -76,7 +80,7 @@ sudo apt-get install python3
 ```
 After installation, you can proceed to cloning the repository.
 
-### Clone the Repository
+### Setup
 #### 1. Set up your ROS workspace
 
 Create a new workspace (or use an existing one) and navigate to its `src` directory:
@@ -311,6 +315,8 @@ To address this problem in Python, an additional check was implemented to ensure
 
   - If no message is received within the timeout, the node assumes that turtle2 does not exist.
   - The node then calls the /spawn service to create turtle2 at the coordinates (5.0, 2.0) with an orientation of 0.0.
+
+Below is the code that sets up this check:
 ```Python
 def check_if_turtle2_exists():
     ## Checks if turtle2 exists by subscribing to /turtle2/pose.
