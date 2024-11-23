@@ -169,7 +169,7 @@ To stop the nodes, simply press `Ctrl+C` in the terminal where each node is runn
 
 ## Implementation Details
 
-### User Interface node
+### User Interface Node
 
 The structure of the `user_interface` node is similar in both C++ and Python. The logic for handling user inputs, setting velocities, and publishing commands is nearly identical in both languages. Since the logic for both versions is fundamentally the same, I will explain the details using the C++ version as an example.
 
@@ -292,3 +292,4 @@ Below is the code for publishing the velocities:
 #### 3. Stopping the Turtle
 After 1 second, the velocities are set to 0 (both linear and angular) to stop the turtle, and the stop command is published to the respective turtle.
 
+### Distance Monitor Node
