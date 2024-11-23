@@ -186,11 +186,11 @@ To stop the nodes, simply press `Ctrl+C` in the terminal where each node is runn
 
 ### User Interface Node
 
-The structure of the `user_interface` node is similar in both C++ and Python. The logic for handling user inputs, setting velocities, and publishing commands is nearly identical in both languages. Since the logic for both versions is fundamentally the same, I will explain the details using the C++ version as an example.
+The structure of the `user_interface` node is similar in both **C++** and **Python**. The logic for handling user inputs, setting velocities, and publishing commands is nearly identical in both languages. Since the logic for both versions is fundamentally the same, I will explain the details using the **C++** version as an example.
 
-However, there was one key difference when running the node in Python: if the user closed the node and opened it again, `turtle2` would already exist in the simulation, causing a conflict. This issue did not occur in the C++ implementation, where if `turtle2` already existed, the node would simply display a message saying "turtle2 already exists" and take the position from the already existing turtle.
+However, there was one key difference when running the node in **Python**: if the user closed the node and opened it again, `turtle2` would already exist in the simulation, causing a conflict. This issue did not occur in the **C++** implementation, where if `turtle2` already existed, the node would simply display a message saying "turtle2 already exists" and take the position from the already existing turtle.
 
-In the Python version, when the node is restarted, attempting to spawn `turtle2` again would cause the node to crash because `turtle2` already existed in the simulation. To address this, additional checks were implemented to ensure that `turtle2` is only spawned if it doesn't already exist. This solution is explained below in separate section.
+In the **Python** version, when the node is restarted, attempting to spawn `turtle2` again would cause the node to crash because `turtle2` already existed in the simulation. To address this, additional checks were implemented to ensure that `turtle2` is only spawned if it doesn't already exist. This solution is explained below in separate section.
 
 ### 1. Spawning Turtle2
 
@@ -307,18 +307,16 @@ else if (turtle_name == "turtle2") {
 After 1 second, the velocities are set to 0 (both linear and angular) to stop the turtle, and the stop command is published to the respective turtle.
 
 ### 4. Python `turtle2` already exist issue
-As discussed earlier, when restarting the `user_interface` node in Python, the node crashed because `turtle2` already existed in the simulation. This issue did not occur in the C++ version.
+As discussed earlier, when restarting the `user_interface` node in **Python**, the node crashed because `turtle2` already existed in the simulation. This issue did not occur in the **C++** version.
 
-To address this problem in Python, an additional check was implemented to ensure that turtle2 already exists in the simulation before attempting to spawn it. This check uses the /turtle2/pose topic, which is only active when turtle2 is present. The solution involves the following steps:
+To address this problem in **Python**, an additional check was implemented to ensure that `turtle2` already exists in the simulation before attempting to spawn it. This check uses the `/turtle2/pose` topic, which is only active when `turtle2` is present. The solution involves the following steps:
 
-- Check if turtle2 Exists:
-
-  - Subscribe to the /turtle2/pose topic, which publishes the position and orientation of turtle2.
-  - If a message is received within a 1-second timeout, it confirms that turtle2 already exists in the simulation, and no further action is needed.
-- Spawn turtle2 if Not Found:
-
-  - If no message is received within the timeout, the node assumes that turtle2 does not exist.
-  - The node then calls the /spawn service to create turtle2 at the coordinates (5.0, 2.0) with an orientation of 0.0.
+- Check if `turtle2` Exists:
+  - Subscribe to the `/turtle2/pose` topic, which publishes the position and orientation of `turtle2`.
+  - If a message is received within a 1-second timeout, it confirms that `turtle2` already exists in the simulation, and no further action is needed.
+- Spawn `turtle2` if Not Found:
+  - If no message is received within the timeout, the node assumes that `turtle2` does not exist.
+  - The node then calls the `/spawn` service to create `turtle2` at the coordinates **(5.0, 2.0)** with an orientation of **0.0**.
 
 Below is the code that sets up this check:
 ```Python
@@ -366,8 +364,8 @@ distance = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 $$
 
 Where:
-- \( (x_1, y_1) \) are the coordinates of turtle1,
-- \( (x_2, y_2) \) are the coordinates of turtle2.
+- $\( (x_1, y_1) \)$ are the coordinates of turtle1,
+- $\( (x_2, y_2) \)$ are the coordinates of turtle2.
 
 This calculation helps in monitoring whether the turtles are too close to each other, based on the **distance_threshold**.
 ```cpp
